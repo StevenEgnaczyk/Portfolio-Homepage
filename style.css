@@ -23,6 +23,9 @@
 body {
     font-family: "Poppins", sans-serif;
     background-color: var(--white);
+    display: block;
+    flex-direction: column;
+    width: 100%;
 }
 
 
@@ -259,16 +262,14 @@ section {
     flex-direction: column;
     padding: 1.5rem;
     background: var(--white);
-    border-radius: 2rem;
     border: var(--grey-blue) 0.1rem solid;
+    border-radius: 2rem;
     text-align: center;
-    height: 50vh;
+    height: auto;
 }
 
 .highlighted-project-container img {
     border-radius: 2rem;
-    width: 80vh;
-    height: 32vh;
 }
 
 /* ICONS */
@@ -428,7 +429,8 @@ article .icon {
 /* PROJECTS SECTION */
 
 #projects {
-    position: relative;
+    position:relative;
+    height: auto;
 }
 
 .projects-container {
@@ -452,35 +454,6 @@ article .icon {
     text-align: center;
     flex: 1;
     align-content: center;
-}
-
-.projects {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-}
-
-.project {
-    opacity: 0;
-    transform: scale(0);
-    padding: 0;
-    margin: 0;
-    display: none;
-    border-width: 0;
-}
-
-.project.show {
-    display:inline;
-    border: var(--text-dark) 0.1rem solid;
-    width: 30%;
-    opacity: 1;
-    margin-top: 1rem;
-    visibility: visible;
-    transform: scale(1);
-    border-width: 3px;
-    margin-right: 0.2rem;
-    padding: 1rem;
-    border-radius: 2rem;
 }
 
 [type="radio"]:checked,
@@ -557,20 +530,101 @@ article .icon {
     background-color: purple;
 }
 
-.color-container {
-    border-color: rgb(163, 163, 163);
-    background: rgb(250, 250, 250);
+.projects {
+    display: grid;
+    grid-template-columns: repeat(3, 33.33%);
+    width: 100%;
+    justify-content: center;
+}
+
+.project {
+    opacity: 0;
+    transform: scale(0);
+    padding: 0;
+    margin: 0;
+    display: none;
+    border-width: 0;
+}
+
+.project.show {
+    text-align: center;
+    display:inline;
+    border: var(--text-dark) 0.1rem solid;
+    opacity: 1;
+    margin-top: 1rem;
+    visibility: visible;
+    transform: scale(1);
+    border-width: 3px;
+    margin-right: 0.2rem;
+    padding: 1rem;
+    border-radius: 2rem;
 }
 
 .project-title {
     margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
     color: black;
     text-decoration:underline;
 }
 
 .tags-container {
-    margin-top: 0.1rem;
-    margin-bottom: 0.1rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+
+.tag {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.python-tag {
+    background-color: #306998; /* Python blue */
+    color: white;
+}
+
+.flask-tag {
+    background-color: #000000; /* Flask black */
+    color: white;
+}
+
+.react-tag {
+    background-color: #61dafb; /* React blue */
+    color: black;
+}
+
+.java-tag {
+    background-color: #007396; /* Java blue */
+    color: white;
+}
+
+.api-tag {
+    background-color: #d9534f; /* Bootstrap danger red */
+    color: white;
+}
+
+.matlab-tag {
+    background-color: #0076a8; /* MATLAB blue */
+    color: white;
+}
+
+.docker-tag {
+    background-color: #0db7ed; /* Docker blue */
+    color: white;
+}
+
+.tensorflow-tag {
+    background-color: #ff6f00; /* TensorFlow orange */
+    color: white;
+}
+
+.cpp-tag {
+    background-color: #00599c; /* C++ blue */
+    color: white;
 }
 
 .slideshow-container {
@@ -635,48 +689,17 @@ article .icon {
   border-color: rgb(163, 163, 163);
 }
 
-
-.tag {
-    display: inline-block;
-    padding: 5px 10px;
-    margin: 0 5px;
-    border-radius: 15px;
-    font-size: 12px;
-    font-weight: bold;
-}
-
-.python-tag {
-    background-color: #f1c40f;
+.project-btn-invalid {
+    font-weight: 600;
+    padding: 1rem;
+    width: 8rem;
+    border-radius: 2rem;
+    cursor: not-allowed;
     color: black;
-}
-
-.flask-tag {
-    background-color: #ff932b;
-    color: black;
-}
-
-.react-tag {
-    background-color: #64e1fe;
-    color: black;
-}
-
-.java-tag {
-    background-color: purple;
-    color: white;
-}
-
-.api-tag {
-    background-color: lightcoral;
-    color: black;
-}
-
-.matlab-tag {
-    background-color: aquamarine;
-    color: black;
-}
+    border-color: rgb(163, 163, 163);
+  }
 
 /* CONTACT */
-
 #contact {
   display: flex;
   justify-content: center;

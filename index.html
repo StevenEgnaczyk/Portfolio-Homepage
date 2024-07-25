@@ -102,8 +102,6 @@
         </div>
     </section>
 
-    <hr>
-
     <section id="projects">
         <h1 class="title">Recent Projects</h1>
         <div class="projects-container">
@@ -132,15 +130,16 @@
 
                 <!-- Spotify Genie -->
                 <div class="project show machine-learning">
-                    <h2 class="experience-sub-title project-title">Spotify Genie</h2>
+                    <h2 class="project-title">Spotify Genie</h2>
                     <div class="tags-container">
                         <span class="tag python-tag">Python</span>
                         <span class="tag flask-tag">Flask</span>
                         <span class="tag react-tag">React</span>
+                        <span class="tag docker-tag">Docker</span>
                         <span class="tag api-tag">API Usage</span>
+                        <span class="tag tensorflow-tag">Tensorflow</span>
                     </div>
-                    <div class="slideshow-container">
-                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <div class="slideshow-container" data-slideshow="1">
                         <div class="mySlides fade">
                             <img src="./assets/Projects/SpotifyGenie/SpotifyGenie_1.png" alt="Project 1" class="project-img">
                         </div>
@@ -150,18 +149,19 @@
                         <div class="mySlides fade">
                             <img src="./assets/Projects/SpotifyGenie/SpotifyGenie_3.png" alt="Project 3" class="project-img">
                         </div>
-                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
                     </div>
                     <p class="project-description">
-                        Machine learning project that uses the Spotify API to recommend songs based on user preferences.
+                        Machine learning project that uses user playlists, song lyrics, and machine learning to recommend songs based on user preferences.
                     </p>
                     <div class="btn-container">
                         <button class="btn github-btn"
-                        onclick="location.href='https://github.com/'">
+                        onclick="location.href='https://github.com/LukeAMcSherry/CSE5914-SpotifyGroup'">
                             GitHub
                         </button>
-                        <button class="btn btn-color-1 project-btn"
-                        onclick="location.href='https://github.com/'">
+                        <button class="project-btn-invalid"
+                        onclick="location.href=''">
                             Live Demo
                         </button>
                     </div>
@@ -173,8 +173,21 @@
                     <div class="tags-container">
                         <span class="tag java-tag">Java</span>
                     </div>
-                    <div class="article-container">
-                        <img src="./assets/SpotifyGenie1.png" alt="Project 1" class="project-img">
+                    <div class="slideshow-container" data-slideshow="2">
+                        <div class="mySlides fade">
+                            <img src="./assets/Projects/SortingAlgorithmVisualizer/SortingAlgorithmVisualizer_1.png" alt="Project 1" class="project-img">
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="./assets/Projects/SortingAlgorithmVisualizer/SortingAlgorithmVisualizer_2.png" alt="Project 2" class="project-img">
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="./assets/Projects/SortingAlgorithmVisualizer/SortingAlgorithmVisualizer_3.png" alt="Project 3" class="project-img">
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="./assets/Projects/SortingAlgorithmVisualizer/SortingAlgorithmVisualizer_4.png" alt="Project 3" class="project-img">
+                        </div>
+                        <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
                     </div>
                     <p class="project-description">
                         Sorting algorithm visualizer that displays the process of sorting algorithms in real-time.    
@@ -184,70 +197,99 @@
                         onclick="location.href='https://github.com/'">
                             GitHub
                         </button>
-                        <button class="btn btn-color-1 project-btn"
+                        <button class="project-btn-invalid"
                         onclick="location.href='https://github.com/'">
                             Live Demo
                         </button>
                     </div>
                 </div>
 
-                <!-- Battleship with AI -->
+                <!-- Sorting Algorithm Visualizer -->
                 <div class="project show software-development">
-                    <h2 class="experience-sub-title project-title">Sorting Algorithm Visualizer</h2>
+                    <h2 class="experience-sub-title project-title">Legend of Zelda Game</h2>
                     <div class="tags-container">
-                        <span class="tag matlab-tag">MatLab</span>
+                        <span class="tag cpp-tag">C++</span>
                     </div>
-                    <div class="article-container">
-                        <img src="./assets/SpotifyGenie1.png" alt="Project 1" class="project-img">
+                    <div class="slideshow-container" data-slideshow="3">
+                        <div class="mySlides fade">
+                            <img src="./assets/Projects/LegendOfZelda/LOZ_3.png" alt="Project 1" class="project-img">
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="./assets/Projects/LegendOfZelda/LOZ_2.png" alt="Project 2" class="project-img">
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="./assets/Projects/LegendOfZelda/LOZ_1.png" alt="Project 3" class="project-img">
+                        </div>
+                        <a class="prev" onclick="plusSlides(-1, 3)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1, 3)">&#10095;</a>
                     </div>
                     <p class="project-description">
-                        Sorting algorithm visualizer that displays the process of sorting algorithms in real-time.    
+                        Recreation of the first Legend of Zelda Dungeon using C++.    
                     </p>
                     <div class="btn-container">
                         <button class="btn github-btn"
                         onclick="location.href='https://github.com/'">
                             GitHub
                         </button>
-                        <button class="btn btn-color-1 project-btn"
+                        <button class="project-btn-invalid"
                         onclick="location.href='https://github.com/'">
                             Live Demo
                         </button>
                     </div>
                 </div>
 
-                <div class="project show software-development"></div>
-                <div class="project show data-science"></div>
-                <div class="project show other"></div>
-                <div class="project show machine-learning"></div>
-                <div class="project show machine-learning"></div>
-                <div class="project show data-science"></div>
-                <div class="project show data-science"></div>
-                <div class="project show software-development"></div>
+                <!-- NullPointerException -->
+                <div class="project show other">
+                    <h2 class="experience-sub-title project-title">NullPointerException</h2>
+                    <div class="tags-container">
+                    </div>
+                    <div class="slideshow-container" data-slideshow="4">
+                        <div class="mySlides fade">
+                            <img src="./assets/Projects/NullPointerException/NullPointerException_1.png" alt="Project 1" class="project-img">
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="./assets/Projects/NullPointerException/NullPointerException_2.png" alt="Project 2" class="project-img">
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="./assets/Projects/NullPointerException/NullPointerException_3.png" alt="Project 3" class="project-img">
+                        </div>
+                        <a class="prev" onclick="plusSlides(-1, 4)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1, 4)">&#10095;</a>
+                    </div>
+                    <p class="project-description">
+                        Educational Computer Science YouTube channel specializing in general-purpose lectures.    
+                    </p>
+                    <div class="btn-container">
+                        <button class="project-btn-invalid"
+                        onclick="location.href='https://github.com/'">
+                            Live Demo
+                        </button>
+                    </div>
+                </div>
 
-                <script>
-                    let slideIndex = 1;
-                    showSlides(slideIndex);
-                    
-                    function plusSlides(n) {
-                        showSlides(slideIndex += n);
-                    }
-                    
-                    function currentSlide(n) {
-                        showSlides(slideIndex = n);
-                    }
-                    
-                    function showSlides(n) {
-                        let i;
-                        let slides = document.getElementsByClassName("mySlides");
-                        if (n > slides.length) {slideIndex = 1}
-                        if (n < 1) {slideIndex = slides.length}
-                        for (i = 0; i < slides.length; i++) {
-                            slides[i].style.display = "none";
-                        }
-                        slides[slideIndex-1].style.display = "block";
-                    }
-                </script>
             </div>
+
+            <script>
+                const slideIndices = {};
+        
+                document.querySelectorAll('.slideshow-container').forEach(container => {
+                    const slideshowId = container.getAttribute('data-slideshow');
+                    slideIndices[slideshowId] = 1;
+                    showSlides(slideIndices[slideshowId], slideshowId);
+                });
+        
+                function plusSlides(n, slideshowId) {
+                    showSlides(slideIndices[slideshowId] += n, slideshowId);
+                }
+        
+                function showSlides(n, slideshowId) {
+                    const slides = document.querySelectorAll(`.slideshow-container[data-slideshow="${slideshowId}"] .mySlides`);
+                    if (n > slides.length) { slideIndices[slideshowId] = 1 }
+                    if (n < 1) { slideIndices[slideshowId] = slides.length }
+                    slides.forEach(slide => slide.style.display = "none");
+                    slides[slideIndices[slideshowId] - 1].style.display = "block";
+                }
+            </script>
         </div>
         <img 
         src="./assets/arrow.png" alt="Arrow icon" class="icon arrow"
