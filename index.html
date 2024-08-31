@@ -9,8 +9,8 @@
         <meta property="og:description" content="Showcasing my skills and projects in Computer Science and Engineering.">
         <meta property="og:image" content="URL_to_profile_picture">
         <title>My Portfolio</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="mediaqueries.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/mediaqueries.css">
     </head>
     
 <body>
@@ -54,48 +54,96 @@
     <section id="profile">
         <div class="profile-section-container">
             <div class="profile-container">
-                <div class="section__pic-container">
-                    <img src="./assets/profile-pic.png" alt="Steven Egnaczyk Profile Picture">
+                <div class="profile-container-picture">
+                    <img class="profile-pic" src="./assets/profile-pic.png" alt="Steven Egnaczyk Profile Picture">
                 </div>
-                <div class="section__text">
-                    <div class="btn-container">
-                        <button class="btn btn-color-2" onclick="window.open('./assets/resume.pdf')">
-                            Download CV
-                        </button>
-                        <button class="btn btn-color-1" onclick="location.href='./#contact'">
-                            Contact Info
-                        </button>
-                    </div>
+                <div class="profile-btn-container">
+                    <button class="btn profile-btn btn-color-2" onclick="window.open('./assets/resume.pdf')">
+                        Download CV
+                    </button>
+                    <button class="btn profile-btn btn-color-1" onclick="location.href='./#contact'">
+                        Contact Info
+                    </button>
                 </div>
-                <div id="socials-container">
+                    
+                <div class="socials-container">
                     <img 
                         src="./assets/linkedin.png" 
                         alt="My LinkedIn Profile"
-                        class="icon" 
                         onclick="location.href='https://www.linkedin.com/in/steven-egnaczyk-949a71208/'"
                     />
                     <img 
                         src="./assets/github.png" 
                         alt="My GitHub Profile"
-                        class="icon" 
                         onclick="location.href='https://github.com/StevenEgnaczyk'"
                     />
                 </div>
             </div>
-            <div class="highlighted-project-container color-container">
-                <h2 class="title">Most Recent Project</h2>
-                <div class="highlighted-project">
-                    <img src="./assets/image.png" alt="Project 3" class="project-img">
+            <div class="highlighted-project-container">
+                <h1 class="highlighted-project-title">Most Recent Project</h1>
+                <h2 class="highlighted-project-subtitle">Spotify Genie</h2>
+                <div class="highlighted-project-tags-container">
+                    <div class="highlighted-tag tag python-tag">Python</div>
+                    <div class="tag flask-tag">Flask</div>
+                    <div class="tag react-tag">React</div>
+                    <div class="tag docker-tag">Docker</div>
+                    <div class="tag api-tag">API Usage</div>
+                    <div class="tag tensorflow-tag">Tensorflow</div>
                 </div>
-                <p>Portfolio Website</p>
-                <div class="btn-container">
-                    <button class="btn github-btn"
-                        onclick="location.href='https://github.com/'">
+                <div class="highlighted-project-slideshow-container" data-slideshow="0">
+                    <a class="prev" onclick="plusHighlightedSlides(-1, 0)">&#10094;</a>
+                    <div class="highlighted-slide fade">
+                        <img src="./assets/Projects/SpotifyGenie/SpotifyGenie_1.png" alt="Project 1" class="project-img">
+                    </div>
+                    <div class="highlighted-slide fade">
+                        <img src="./assets/Projects/SpotifyGenie/SpotifyGenie_2.png" alt="Project 2" class="project-img">
+                    </div>
+                    <div class="highlighted-slide fade">
+                        <img src="./assets/Projects/SpotifyGenie/SpotifyGenie_3.png" alt="Project 3" class="project-img">
+                    </div>
+                    
+                    <a class="next" onclick="plusHighlightedSlides(1, 0)">&#10095;</a>
+                </div>
+                <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        let highlightedSlideIndex = 0;
+                        showHighlightedSlides(highlightedSlideIndex, 0);
+                        
+                        function plusHighlightedSlides(n, containerIndex) {
+                            showHighlightedSlides(highlightedSlideIndex += n, containerIndex);
+                        }
+                        
+                        function showHighlightedSlides(n, containerIndex) {
+                            let i;
+                            let slides = document.querySelectorAll(`.highlighted-project-slideshow-container[data-slideshow="${containerIndex}"] .highlighted-slide`);
+                            if (n >= slides.length) {
+                                highlightedSlideIndex = 0;
+                            } else if (n < 0) {
+                                highlightedSlideIndex = slides.length - 1;
+                            }
+                            for (i = 0; i < slides.length; i++) {
+                                slides[i].style.display = "none";
+                            }
+                            slides[highlightedSlideIndex].style.display = "block";
+                        }
+                
+                        // Make sure to handle the slide buttons
+                        document.querySelector(".prev").addEventListener("click", function() {
+                            plusHighlightedSlides(-1, 0);
+                        });
+                
+                        document.querySelector(".next").addEventListener("click", function() {
+                            plusHighlightedSlides(1, 0);
+                        });
+                    });
+                </script>
+                <p class="highlighted-project-description">
+                    Machine learning project that uses user playlists, song lyrics, and machine learning to recommend songs based on user preferences.
+                </p>
+                <div class="highlighted-project-btn-container">
+                    <button class="highlighted-btn github-btn"
+                        onclick="location.href='https://github.com/LukeAMcSherry/CSE5914-SpotifyGroup'">
                             GitHub
-                    </button>
-                    <button class="btn btn-color-2 project-btn"
-                    onclick="location.href='https://github.com/'">
-                        Live Demo
                     </button>
                 </div>
             </div>
@@ -169,7 +217,7 @@
 
                 <!-- Sorting Algorithm Visualizer -->
                 <div class="project show software-development">
-                    <h2 class="experience-sub-title project-title">Sorting Algorithm Visualizer</h2>
+                    <h2 class="project-title">Sorting Visualizer</h2>
                     <div class="tags-container">
                         <span class="tag java-tag">Java</span>
                     </div>
@@ -204,9 +252,9 @@
                     </div>
                 </div>
 
-                <!-- Sorting Algorithm Visualizer -->
+                <!-- Legend of Zelda Game -->
                 <div class="project show software-development">
-                    <h2 class="experience-sub-title project-title">Legend of Zelda Game</h2>
+                    <h2 class="project-title">Legend of Zelda Game</h2>
                     <div class="tags-container">
                         <span class="tag cpp-tag">C++</span>
                     </div>
@@ -238,12 +286,49 @@
                     </div>
                 </div>
 
-                <!-- NullPointerException -->
-                <div class="project show other">
-                    <h2 class="experience-sub-title project-title">NullPointerException</h2>
+                <!-- NBA Statistics API -->
+                <div class="project show data-science">
+                    <h2 class="project-title">NBA Stats API</h2>
                     <div class="tags-container">
+                        <span class="tag python-tag">Python</span>
+                        <span class="tag api-tag">API Usage</span>
+                        <span class="tag matplotlib-tag">Matplot Lib</span>
                     </div>
                     <div class="slideshow-container" data-slideshow="4">
+                        <div class="mySlides fade">
+                            <img src="./assets/Projects/NBA API/nba_1.png" alt="Project 1" class="project-img">
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="./assets/Projects/NBA API/nba_2.png" alt="Project 2" class="project-img">
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="./assets/Projects/NBA API/nba_3.png" alt="Project 3" class="project-img">
+                        </div>
+                        <a class="prev" onclick="plusSlides(-1, 4)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1, 4)">&#10095;</a>
+                    </div>
+                    <p class="project-description">
+                        API that retrieves NBA team statistics and displays them in a user-friendly format.    
+                    </p>
+                    <div class="btn-container">
+                        <button class="btn github-btn"
+                        onclick="location.href='https://github.com/'">
+                            GitHub
+                        </button>
+                        <button class=" btn project-btn"
+                        onclick="location.href='projects/nba-api.html'">
+                            Live Demo
+                        </button>
+                    </div>
+                </div>
+
+                <!-- NullPointerException -->
+                <div class="project show other">
+                    <h2 class="project-title">NullPointerException</h2>
+                    <div class="tags-container">
+                        <span class="tag youtube-tag">YouTube</span>
+                    </div>
+                    <div class="slideshow-container" data-slideshow="5">
                         <div class="mySlides fade">
                             <img src="./assets/Projects/NullPointerException/NullPointerException_1.png" alt="Project 1" class="project-img">
                         </div>
@@ -253,8 +338,8 @@
                         <div class="mySlides fade">
                             <img src="./assets/Projects/NullPointerException/NullPointerException_3.png" alt="Project 3" class="project-img">
                         </div>
-                        <a class="prev" onclick="plusSlides(-1, 4)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1, 4)">&#10095;</a>
+                        <a class="prev" onclick="plusSlides(-1, 5)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1, 5)">&#10095;</a>
                     </div>
                     <p class="project-description">
                         Educational Computer Science YouTube channel specializing in general-purpose lectures.    
@@ -291,22 +376,34 @@
                 }
             </script>
         </div>
-        <img 
-        src="./assets/arrow.png" alt="Arrow icon" class="icon arrow"
-        onclick="location.href='./#projects'"
-        >
     </section>
 
+    <!--
     <section id="about">
-            <p class="section__text__p1">More About Me</p>
-            <h1 class="title">About Me</h1>
-            <div class="section-container">
-                <div class="section__pic-container">
+        <div class="about-section-container">
+            <div class="about-container">
+                <h1 class="title about-title">About Me</h1>
+                <div class="about-picture-container">
                     <img 
                     src="./assets/about-picture.jpg" 
                     alt="Profile Picture"
                     class="about-pic">
                 </div>
+                    <div class="about-text-container">
+                        <p>
+                            Hello! My name is Steven Egnaczyk. Currently, I'm
+                            a graduate student at The Ohio State University 
+                            pursuing a combined B.S/M.S Degree in Computer Science and Engineering. 
+                            I'm extremely passionate about the changing landscape in 
+                            Artificial Intelligence and Machine learning. I have gained valuable 
+                            internship experience in the software development field at both 
+                            Optum and Ab Initio. Right now, I am working at Vanguard as Machine Learning
+                        Scientist, as well as a Graduate Teaching Assistant for Ohio State (Teaching
+                        and introduction to Copmuter Science Course CSE 2221).
+                        </p>
+                    </div>
+                </div>
+            </div>
                 <div class="about-details-container">
                     <div class="about-containers">
                         <div class="details-container">
@@ -328,27 +425,15 @@
                             <p>B.S Computer Science and Engineering<br>M.S Computer Science and Engineering</p>
                         </div>
                     </div>
-                    <div class="text-container">
-                        <p>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                            Assumenda, reprehenderit provident quisquam explicabo 
-                            tempora dicta facilis perferendis fugiat quo facere tenetur 
-                            labore sit illo libero aut error deleniti quasi nisi nobis
-                            illum aliquid iusto expedita incidunt eaque! 
-                            Amet non animi illo. Modi optio dicta itaque natus sequi 
-                            tempora rerum id.
-                        </p>
-                    </div>
                 </div>
             </div>
-            <img 
-            src="./assets/arrow.png" alt="Arrow icon" class="icon arrow"
-            onclick="location.href='./#experience'"
-            >
         </div>
-    </section>
-
-    <hr>
+        <img 
+        src="./assets/arrow.png" alt="Arrow icon" class="icon arrow"
+        onclick="location.href='./#experience'"
+        >
+    </div>
+</section>
 
     <section id="experience">
         <p class="section__text__p1">Explore My</p>
@@ -442,6 +527,7 @@
         onclick="location.href='./#projects'"
         >
     </section>
+-->
 
     <section id="contact">
         <p class="section__text__p1">Get in Touch</p>

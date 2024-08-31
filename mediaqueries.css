@@ -1,8 +1,5 @@
 @media screen and (max-width: 1400px) {
-    #profile {
-        height: auto;
-        margin-bottom: 6rem;
-    }
+
     .about-containers {
         flex-wrap: wrap;
     }
@@ -27,10 +24,7 @@
     .experience-details-container {
         margin-top: 2rem;
     }
-    #profile,
-    .section-container {
-        display: block;
-    }
+
     .arrow {
         display: none;
     }
@@ -55,68 +49,82 @@
     }
 }
 
-@media screen and (max-width: 1000px) {
-    #desktop-nav {
-        display: none;
-    }
-
-    #hamburger-nav {
-        display: flex;
-    }
-    #experience,
-    .experience-details-container {
-        margin-top: 2rem;
-    }
-    #profile,
-    .section-container {
-        display: block;
-    }
-
-    .profile-section-container {
-        display: block;
-    }
-
-    .arrow {
-        display: none;
-    }
-    section,
-    .section-container {
-        height: fit-content;
-    }
-    section {
-        margin: 0 5%;
-    }
-    .section__pic-container {
-        width: 275px;
-        height: 275px;
-        margin: 0 auto 2rem;
-    }
-    .about-containers {
-        margin-top: 0;
-    }
-
-    .project-title {
-        text-decoration: dashed;
-    }
-
-    .projects {
-        display: grid;
-        grid-template-columns: repeat(2, 50%);
-        width: 100%;
-        justify-content: center;
-    }
-}
 
 @media screen and (max-width: 600px) {
+
+    /* Profile Section */
+    .profile-container {
+        height: 45%;
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+        gap: 0.1rem;
+    }
+
+    .btn-container button {
+        height: 2rem;
+        padding: 0px;
+    }
+
+    .btn-container p {
+        align-self: center;
+    }
+
+
+    .project-title {
+        margin-top: 0.1rem;
+        margin-bottom: 0.1rem;
+        font-size: 1rem;
+    }
+
+    .project-subtitle {
+        font-size: 0.75rem;
+    }
+    
+    .tags-container {
+        display: flex;
+        margin-top: 0rem;
+        margin-bottom: 0rem;
+        height: 5%;
+    }
+
+    .tags-container div {
+        font-size: 0.5rem;
+    }
+
+    .slideshow-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        align-content: center;
+        height: 60%;
+    }
+
+    .project-description {
+        margin-top: 0.1rem;
+        margin-bottom: 0.1rem;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        height: 15%;
+        font-size: 0.75rem;
+        text-overflow: clip;
+    }
+
+    .project-btn-container {
+        height: 10%;
+        align-items: center;
+    }
+
+    .mySlides {
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
     #contact,
     footer {
         height: auto;
         margin-bottom: 4rem;
     }
-    #profile {
-        height: auto;
-        margin-bottom: 0;
-    }
+
     article {
         font-size: 1rem;
     }
