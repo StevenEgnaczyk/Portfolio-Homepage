@@ -3,7 +3,6 @@ from flask_cors import CORS
 from static.scripts.nba_api import generate_plot
 import os
 
-
 app = Flask(__name__)
 CORS(app)  # This enables CORS for all routes
 
@@ -24,16 +23,14 @@ def submit():
 
         try:
             result = generate_plot(team, stat1, stat2)
+            return send_file(result, mimetype='image/png', as_attachment=True)
         except Exception as e:
-            print(e)
-        
-        return send_file(result, mimetype='image/png')
+            app.logger.error(f"Error generating plot: {e}")
+            return jsonify(error="Error generating plot"), 500
         
     except Exception as e:
-        return jsonify(error=str(e)), 500
-
-def your_function(team, stat1, stat2):
-    return f"Received team: {team}, stat1: {stat1}, stat2: {stat2}"
+        app.logger.error(f"Error in submit route: {e}")
+        return jsonify(error="Internal Server Error"), 500
 
 if __name__ == '__main__':
     app.run(debug=True, port=5001)
