@@ -1,13 +1,11 @@
 from nba_api.stats.static import teams
 from nba_api.stats.endpoints import teamgamelogs
 from nba_api.stats.endpoints import leaguegamefinder
-from datetime import datetime
 import pandas as pd
 import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
 import mplcursors
-import sys
 from io import BytesIO
 
 stat_rename_dict = {
