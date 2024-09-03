@@ -4,3 +4,4 @@ matplotlib
 mplcursors
 numpy
 pandas
+gunicorn
