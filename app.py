@@ -1,11 +1,15 @@
-from flask import Flask, request, jsonify, send_from_directory, send_file
+from flask import Flask, request, jsonify, send_from_directory, send_file, render_template
 from flask_cors import CORS
-from scripts.nba_api import generate_plot
+from static.scripts.nba_api import generate_plot
 import os
 
 
 app = Flask(__name__)
 CORS(app)  # This enables CORS for all routes
+
+@app.route('/')
+def home():
+    return render_template('index.html')
 
 @app.route('/projects/nba-api.html')
 def nba_api():
