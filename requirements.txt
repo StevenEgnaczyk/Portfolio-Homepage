@@ -5,3 +5,5 @@ mplcursors
 numpy
 pandas
 gunicorn
+nba_api
+io
