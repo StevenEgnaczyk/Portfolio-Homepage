@@ -1,6 +1,6 @@
-Flask==3.0.3
-Flask_Cors==4.0.0
-matplotlib==3.8.2
-mplcursors==0.5.3
-numpy==2.1.0
-pandas==2.2.2
+Flask
+Flask_Cors
+matplotlib
+mplcursors
+numpy
+pandas
