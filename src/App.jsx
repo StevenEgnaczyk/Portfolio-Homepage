@@ -3,7 +3,7 @@ import Header from './components/header/Header'
 import Nav from './components/nav/Nav'
 import About from './components/about/About'
 import Experience from './components/experience/Experience'
-import Myprojects from './components/myprojects/Myprojects'
+import Projects from './components/Projects/Projects'
 import Contacts from './components/contacts/Contacts'
 import Footer from './components/footer/Footer'
 
@@ -13,9 +13,9 @@ const App = () => {
     <>
         <Header/>
         <Nav/>
+        <Projects/>
         <About/>
         <Experience/>
-        <Myprojects/>
         <Contacts/>
         <Footer/>
 

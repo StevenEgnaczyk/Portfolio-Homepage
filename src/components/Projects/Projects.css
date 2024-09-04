@@ -1,0 +1,283 @@
+/* PROJECTS SECTION */
+#projects {
+    position: relative;
+    height: auto;
+}
+
+.projects-container {
+    width: 100%;
+}
+
+.project-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    background-color: var(--dark-blue);
+    border: 0.1rem solid #000000;
+}
+
+.project-tabs label {
+    cursor: pointer;
+    padding: 0.5rem;
+    color: var(--white);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-align: center;
+    flex: 1;
+    align-content: center;
+}
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label {
+    position: relative;
+    padding-left: 12px;
+    padding-right: 12px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    line-height: 30px;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #fff;
+    margin-right: 10px;
+    margin-left: 10px;
+    transition: all 0.2s ease;
+}
+
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+    content: "";
+    border-radius: 2px;
+    height: 20px;
+    padding: 5px;
+    background-color: #e74c3c;
+    position: absolute;
+    bottom: 0;
+    left: 6px;
+    top: -4px;
+    z-index: -1;
+    transition: all 0.2s ease;
+}
+
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    width: 0;
+}
+
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    width: calc(100% - 24px);
+}
+
+.checkbox-all:checked + label:after,
+.checkbox-all:not(:checked) + label:after {
+    background-color: hotpink;
+}
+
+.checkbox-data-science:checked + label:after,
+.checkbox-data-science:not(:checked) + label:after {
+    background-color: #f1c40f;
+}
+
+.checkbox-machine-learning:checked + label:after,
+.checkbox-machine-learning:not(:checked) + label:after {
+    background-color: #ff932b;
+}
+
+.checkbox-software-development:checked + label:after,
+.checkbox-software-development:not(:checked) + label:after {
+    background-color: #64e1fe;
+}
+
+.checkbox-other:checked + label:after,
+.checkbox-other:not(:checked) + label:after {
+    background-color: purple;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(3, 33.33%);
+    width: 100%;
+    justify-content: center;
+}
+
+.project {
+    opacity: 0;
+    transform: scale(0);
+    padding: 0;
+    margin: 0;
+    display: none;
+    border-width: 0;
+}
+
+.project.show {
+    text-align: center;
+    display: inline;
+    border: 0.1rem solid var(--text-dark);
+    opacity: 1;
+    margin-top: 1rem;
+    visibility: visible;
+    transform: scale(1);
+    border-width: 3px;
+    margin-right: 0.2rem;
+    padding: 1rem;
+    border-radius: 2rem;
+}
+
+.tags-container {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.tag {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.python-tag {
+    background-color: #306998; /* Python blue */
+    color: white;
+}
+
+.flask-tag {
+    background-color: #000000; /* Flask black */
+    color: white;
+}
+
+.react-tag {
+    background-color: #61dafb; /* React blue */
+    color: black;
+}
+
+.java-tag {
+    background-color: #007396; /* Java blue */
+    color: white;
+}
+
+.api-tag {
+    background-color: #d9534f; /* Bootstrap danger red */
+    color: white;
+}
+
+.matlab-tag {
+    background-color: #0076a8; /* MATLAB blue */
+    color: white;
+}
+
+.docker-tag {
+    background-color: #0db7ed; /* Docker blue */
+    color: white;
+}
+
+.tensorflow-tag {
+    background-color: #ff6f00; /* TensorFlow orange */
+    color: white;
+}
+
+.cpp-tag {
+    background-color: #00599c; /* C++ blue */
+    color: white;
+}
+
+.html-tag {
+    background-color: #e34c26; /* HTML red */
+    color: white;
+}
+
+.css-tag {
+    background-color: #264de4; /* CSS blue */
+    color: white;
+}
+
+.javascript-tag {
+    background-color: #f0db4f; /* JavaScript yellow */
+    color: black;
+}
+
+.matplotlib-tag {
+    background-color: #11557c; /* Matplotlib blue */
+    color: white;
+}
+
+.youtube-tag {
+    background-color: #ff0000; /* YouTube red */
+    color: white;
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+}
+
+.mySlides img {
+    width: 100%;
+    border: 0.1rem solid var(--text-dark);
+    border-radius: 5px;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    margin-top: 0.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.project-description {
+    color: black;
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-btn {
+    color: black;
+    border-color: rgb(163, 163, 163);
+}
+
+.project-btn-invalid {
+    font-weight: 600;
+    padding: 1rem;
+    width: 8rem;
+    border-radius: 2rem;
+    cursor: not-allowed;
+    color: black;
+    border-color: rgb(163, 163, 163);
+}
