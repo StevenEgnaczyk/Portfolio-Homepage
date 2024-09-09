@@ -84,6 +84,8 @@ header {
 }
 
 .social-icon {
+    color: var(--color-primary);  /* Adjust color as needed */
+    opacity: 1;
     position: absolute;
     width: 60px;
     height: 60px;
@@ -111,10 +113,10 @@ header {
 }
 
 /* Example random positions around the image */
-.social-icon-0 { top:10%; left: 10%; animation-delay: 0s; }
-.social-icon-1 { top: 32.5%; left: 10%; animation-delay: 0s; }
-.social-icon-2 { top: 10%; left: 80%; animation-delay: 0s; }
-.social-icon-3 { top: 32.5%; left: 80%; animation-delay: 0s; }
+.social-icon-0 { top:5%; left: 10%; animation-delay: 0s; }
+.social-icon-1 { top: 30%; left: 10%; animation-delay: 0s; }
+.social-icon-2 { top: 5%; left: 80%; animation-delay: 0s; }
+.social-icon-3 { top: 30%; left: 80%; animation-delay: 0s; }
 
 @keyframes bubble {
     0%, 100% {

@@ -6,9 +6,9 @@ import { FaLaptopCode, FaGithub, FaLinkedin, FaYoutube } from 'react-icons/fa'
 
 const socialLinks = [
   { icon: <FaGithub />, link: 'https://github.com/StevenEgnaczyk', label: 'Github' },
-  { icon: <FaLinkedin />, link: 'https://linkedin.com/', label: 'LinkedIn' },
-  { icon: <FaYoutube />, link: 'https://youtube.com/', label: 'YouTube' },
-  { icon: <FaLaptopCode />, link: 'https://example.com/', label: 'Portfolio' }, // Example link and label
+  { icon: <FaLinkedin />, link: 'https://www.linkedin.com/in/steven-egnaczyk-949a71208/', label: 'LinkedIn' },
+  { icon: <FaYoutube />, link: 'https://www.youtube.com/channel/UCmWDlvMYYEbW42B8JyxFBcA', label: 'YouTube' },
+  { icon: <FaLaptopCode />, link: '', label: 'Recent Project' }, // Example link and label
 ]
 
 const Header = () => {

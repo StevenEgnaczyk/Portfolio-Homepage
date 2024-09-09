@@ -15,11 +15,13 @@
 
 :root{
 
-    --color-bg: #999999;
-    --color-bg-variant: #a62c2b;
-    --color-primary: #990033;
-    --color-primary-variant: rgba(77, 181, 255, 0.4);
+    --color-bg: #7c7c7c;
+    --color-gray: #4d4d4d;
+    --color-primary: #800000;
+    --color-secondary: #4b0f0f;
+    --color-black: #000;
     --color-white: #fff;
+
     --color-light: #edf2f4;
 
     --container-width-xl: 50%;
@@ -54,6 +56,10 @@ body{
 }
 
 /* General Styles */
+.sm-container {
+    width: var(--container-width-sm);
+    margin: 0 auto;  /*position in the middle horizontally */
+}
 
 .container{
     width: var(--container-width-xl);
@@ -67,12 +73,6 @@ h1, h2, h3, h4, h5{
 h1{
     font-size: 3.5rem;
     text-decoration: underline;
-}
-
-section{
-
-    margin-top: 8rem; /*Having some white space around different section*/
-    
 }
 
 section > h2, section > h5{

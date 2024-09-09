@@ -6,14 +6,14 @@ const projectsData = [
     title: "Spotify Genie",
     category: "machine-learning",
     description: "Machine learning project that uses user playlists, song lyrics, and machine learning to recommend songs based on user preferences.",
-    tags: ["Python", "Flask", "React", "Docker", "API Usage", "Tensorflow"],
+    tags: ["Python", "Flask", "React", "Docker", "API", "Tensorflow"],
     images: [
-      "../../assets/Projects/SpotifyGenie/SpotifyGenie_1.png",
-      "../../assets/Projects/SpotifyGenie/SpotifyGenie_2.png",
-      "../../assets/Projects/SpotifyGenie/SpotifyGenie_3.png",
+      require("../../assets/Projects/SpotifyGenie/SpotifyGenie_1.png"),
+      require("../../assets/Projects/SpotifyGenie/SpotifyGenie_2.png"),
+      require("../../assets/Projects/SpotifyGenie/SpotifyGenie_3.png"),
     ],
     githubLink: "https://github.com/LukeAMcSherry/CSE5914-SpotifyGroup",
-    demoLink: ""
+    demoLink: "",
   },
   {
     title: "Sorting Visualizer",
@@ -21,13 +21,13 @@ const projectsData = [
     description: "Sorting algorithm visualizer that displays the process of sorting algorithms in real-time.",
     tags: ["Java"],
     images: [
-      "../../assets/Projects/SortingAlgorithmVisualizer/SortingAlgorithmVisualizer_1.png",
-      "../../assets/Projects/SortingAlgorithmVisualizer/SortingAlgorithmVisualizer_2.png",
-      "../../assets/Projects/SortingAlgorithmVisualizer/SortingAlgorithmVisualizer_3.png",
-      "../../assets/Projects/SortingAlgorithmVisualizer/SortingAlgorithmVisualizer_4.png",
+      require("../../assets/Projects/SortingAlgorithmVisualizer/SortingAlgorithmVisualizer_1.png"),
+      require("../../assets/Projects/SortingAlgorithmVisualizer/SortingAlgorithmVisualizer_2.png"),
+      require("../../assets/Projects/SortingAlgorithmVisualizer/SortingAlgorithmVisualizer_3.png"),
+      require("../../assets/Projects/SortingAlgorithmVisualizer/SortingAlgorithmVisualizer_4.png"),
     ],
     githubLink: "https://github.com/",
-    demoLink: "https://github.com/"
+    demoLink: "https://github.com/",
   },
   {
     title: "Legend of Zelda Game",
@@ -35,25 +35,25 @@ const projectsData = [
     description: "Recreation of the first Legend of Zelda Dungeon using C++.",
     tags: ["C++"],
     images: [
-      "../../assets/Projects/LegendOfZelda/LOZ_3.png",
-      "../../assets/Projects/LegendOfZelda/LOZ_2.png",
-      "../../assets/Projects/LegendOfZelda/LOZ_1.png",
+      require("../../assets/Projects/LegendOfZelda/LOZ_3.png"),
+      require("../../assets/Projects/LegendOfZelda/LOZ_2.png"),
+      require("../../assets/Projects/LegendOfZelda/LOZ_1.png"),
     ],
     githubLink: "https://github.com/",
-    demoLink: "https://github.com/"
+    demoLink: "https://github.com/",
   },
   {
     title: "NBA Stats API",
     category: "data-science",
     description: "API that retrieves NBA team statistics and displays them in a user-friendly format.",
-    tags: ["Python", "API Usage", "Matplot Lib"],
+    tags: ["Python", "API", "Matplotlib"],
     images: [
-      "../../assets/Projects/NBA API/nba_1.png",
-      "../../assets/Projects/NBA API/nba_2.png",
-      "../../assets/Projects/NBA API/nba_3.png",
+      require("../../assets/Projects/NBA API/nba_1.png"),
+      require("../../assets/Projects/NBA API/nba_2.png"),
+      require("../../assets/Projects/NBA API/nba_3.png"),
     ],
     githubLink: "https://github.com/",
-    demoLink: "projects/nba-api.html"
+    demoLink: "projects/nba-api.html",
   },
   {
     title: "NullPointerException",
@@ -61,12 +61,12 @@ const projectsData = [
     description: "Educational Computer Science YouTube channel specializing in general-purpose lectures.",
     tags: ["YouTube"],
     images: [
-      "../../assets/Projects/NullPointerException/NullPointerException_1.png",
-      "../../assets/Projects/NullPointerException/NullPointerException_2.png",
-      "../../assets/Projects/NullPointerException/NullPointerException_3.png",
+      require("../../assets/Projects/NullPointerException/NullPointerException_1.png"),
+      require("../../assets/Projects/NullPointerException/NullPointerException_2.png"),
+      require("../../assets/Projects/NullPointerException/NullPointerException_3.png"),
     ],
     githubLink: "https://github.com/",
-    demoLink: "https://github.com/"
+    demoLink: "https://github.com/",
   }
 ];
 
@@ -101,15 +101,16 @@ const Project = ({ project }) => {
         <button className="btn github-btn" onClick={() => window.location.href = project.githubLink}>
           GitHub
         </button>
-        <button className={`btn ${project.demoLink ? "project-btn" : "project-btn-invalid"}`} 
+        <button
+          className={`btn ${project.demoLink ? "project-btn" : "project-btn-invalid"}`}
           onClick={() => {
             if (project.demoLink) {
               window.location.href = project.demoLink;
             }
           }}
         >
-  Live Demo
-</button>
+          Live Demo
+        </button>
       </div>
     </div>
   );

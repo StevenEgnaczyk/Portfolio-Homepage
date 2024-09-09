@@ -1,47 +1,44 @@
 import React from 'react'
 import './about.css'
-import myImage from '../../assets/my-image2.jpg'
-import {GiGraduateCap} from 'react-icons/gi'
+import profilePicture from '../../assets/CompositePhoto.jpg'
+import { FaGraduationCap } from "react-icons/fa";
 import {BsBookmarkStar} from 'react-icons/bs'
 import {TfiWorld} from 'react-icons/tfi'
 
 const About = () => {
   return (
     <section id='about'>
-      
-      <h5>Get To Know</h5>
-      <h2>About Me</h2>
-
-      <div className="container about__container">
+      <h1>About Me</h1>
+      <div className="sm-container about__container">
 
           <div className="about__me">
             <div className="about__me-image">
-                <img src={myImage} alt="Picture of Myself" />
+                <img src={profilePicture} alt="Picture of Myself" />
             </div>
           </div>
-
           <div className="about__content">
             <div className="about__cards">
-
               <article className='about__card'>
-                  <GiGraduateCap className='about__icon'/>
-                  <h5>Degree</h5>
-                  <small>Bsc.(Hons) Software Engneering(UG) <br /><i>University of Kelaniya.</i></small>
+                  <FaGraduationCap className='about__icon'/>
+                  <h2>Education</h2>
+                  <b><h5>BS in Computer Science (2020-2024)<br/><i>The Ohio State University</i></h5></b>
+                  <b><h5>MS in Computer Science (2024-2025 Expected)<br/><i>The Ohio State University</i></h5></b>
               </article>
 
               <article className='about__card'>
                   <BsBookmarkStar className='about__icon'/>
-                  <h5>Current GPA</h5>
-                  <small>3.13</small>
+                  <h2>Academics</h2>
+                  <b><h5>Undergraduate GPA: 3.6<br/>Undergraduate Major GPA: 3.5</h5></b>
               </article>
 
               <article className='about__card'>
                   <TfiWorld className='about__icon'/>
-                  <h5>Domains</h5>
+                  <h2>Previous Experience</h2>
                   <small>
                     <ul>
-                      <li>Net Centric</li>
-                      <li>Mobile Applications</li>
+                      <li>Optum (Summer 2022 - Software Engineering Intern)</li>
+                      <li>Ab Initio (Summer 2023 - Software Engineering Intern)</li>
+                      <li>Vanguard (Autumn 2023 : Present - Data Scientist)</li>
                     </ul>
                   </small>
               </article>
