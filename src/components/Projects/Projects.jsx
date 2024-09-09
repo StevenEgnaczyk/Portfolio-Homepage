@@ -27,7 +27,7 @@ const projectsData = [
       require("../../assets/Projects/SortingAlgorithmVisualizer/SortingAlgorithmVisualizer_4.png"),
     ],
     githubLink: "https://github.com/",
-    demoLink: "https://github.com/",
+    demoLink: "",
   },
   {
     title: "Legend of Zelda Game",
@@ -40,7 +40,7 @@ const projectsData = [
       require("../../assets/Projects/LegendOfZelda/LOZ_1.png"),
     ],
     githubLink: "https://github.com/",
-    demoLink: "https://github.com/",
+    demoLink: "",
   },
   {
     title: "NBA Stats API",
@@ -66,7 +66,7 @@ const projectsData = [
       require("../../assets/Projects/NullPointerException/NullPointerException_3.png"),
     ],
     githubLink: "https://github.com/",
-    demoLink: "https://github.com/",
+    demoLink: "https://www.youtube.com/channel/UCmWDlvMYYEbW42B8JyFBcA",
   }
 ];
 
@@ -98,7 +98,7 @@ const Project = ({ project }) => {
       </div>
       <p className="project-description">{project.description}</p>
       <div className="btn-container">
-        <button className="btn github-btn" onClick={() => window.location.href = project.githubLink}>
+        <button className="github-btn" onClick={() => window.location.href = project.githubLink}>
           GitHub
         </button>
         <button

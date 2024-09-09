@@ -143,6 +143,12 @@
     background-color: var(--color-gray);
 }
 
+.project-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 .project-img {
     width: 100%;
     height: auto; /* Ensures the images resize dynamically */
@@ -286,6 +292,12 @@
     overflow: scroll;
 }
 
+.btn-container {
+    gap: 1rem;
+    display: flex;  
+    justify-content: center;
+}
+
 .project-btn {
     color: black;
     border-color: rgb(163, 163, 163);
@@ -296,9 +308,27 @@
     padding: 1rem;
     width: 8rem;
     border-radius: 2rem;
-    cursor: not-allowed;
+    cursor: not-allowed !important;
     color: black;
     border-color: rgb(163, 163, 163);
+}
+
+.github-btn{
+    width: max-content; /* fit exactly it's content */
+    display: inline-block;
+    color: var(--color-white);
+    background: var(--color-github-green);
+    padding: 0.75rem 1.2rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    border: 1px solid var(--color-github-gray);
+    transition: var(--transition);
+}
+
+.github-btn:hover{
+    background: var(--color-github-gray);
+    color: var(--color-white);
+    border-color: var(--color-github-green);
 }
 
 @media screen and (max-width: 1024px) {
