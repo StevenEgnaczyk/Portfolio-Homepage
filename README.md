@@ -1,3 +1,9 @@
+This portfolio homepage was bootstrapped from Thaksila-Bandara's Home-Page Portfolio - modified to fit my personal needs.
+
+A link to his original repository is linked below:
+
+https://github.com/Thakshila-Bandara/my-portfolio
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
