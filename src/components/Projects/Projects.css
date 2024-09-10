@@ -308,7 +308,7 @@
     padding: 1rem;
     width: 8rem;
     border-radius: 2rem;
-    cursor: not-allowed !important;
+    cursor: not-allowed;
     color: black;
     border-color: rgb(163, 163, 163);
 }

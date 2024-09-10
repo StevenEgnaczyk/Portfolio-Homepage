@@ -13,7 +13,6 @@ const projectsData = [
       require("../../assets/Projects/SpotifyGenie/SpotifyGenie_3.png"),
     ],
     githubLink: "https://github.com/LukeAMcSherry/CSE5914-SpotifyGroup",
-    demoLink: "",
   },
   {
     title: "Sorting Visualizer",
@@ -26,8 +25,7 @@ const projectsData = [
       require("../../assets/Projects/SortingAlgorithmVisualizer/SortingAlgorithmVisualizer_3.png"),
       require("../../assets/Projects/SortingAlgorithmVisualizer/SortingAlgorithmVisualizer_4.png"),
     ],
-    githubLink: "https://github.com/",
-    demoLink: "",
+    githubLink: "https://github.com/StevenEgnaczyk/Sorting-Algorithm-Visualizer",
   },
   {
     title: "Legend of Zelda Game",
@@ -39,8 +37,7 @@ const projectsData = [
       require("../../assets/Projects/LegendOfZelda/LOZ_2.png"),
       require("../../assets/Projects/LegendOfZelda/LOZ_1.png"),
     ],
-    githubLink: "https://github.com/",
-    demoLink: "",
+    githubLink: "https://github.com/StevenEgnaczyk/Legend-of-Zelda-Game",
   },
   {
     title: "NBA Stats API",
@@ -52,8 +49,7 @@ const projectsData = [
       require("../../assets/Projects/NBA API/nba_2.png"),
       require("../../assets/Projects/NBA API/nba_3.png"),
     ],
-    githubLink: "https://github.com/",
-    demoLink: "projects/nba-api.html",
+    githubLink: "https://github.com/StevenEgnaczyk/NBA-Statistics-Visualizer",
   },
   {
     title: "NullPointerException",
@@ -65,7 +61,6 @@ const projectsData = [
       require("../../assets/Projects/NullPointerException/NullPointerException_2.png"),
       require("../../assets/Projects/NullPointerException/NullPointerException_3.png"),
     ],
-    githubLink: "https://github.com/",
     demoLink: "https://www.youtube.com/channel/UCmWDlvMYYEbW42B8JyFBcA",
   }
 ];
@@ -98,19 +93,16 @@ const Project = ({ project }) => {
       </div>
       <p className="project-description">{project.description}</p>
       <div className="btn-container">
-        <button className="github-btn" onClick={() => window.location.href = project.githubLink}>
-          GitHub
-        </button>
-        <button
-          className={`btn ${project.demoLink ? "project-btn" : "project-btn-invalid"}`}
-          onClick={() => {
-            if (project.demoLink) {
-              window.location.href = project.demoLink;
-            }
-          }}
-        >
+        {project.githubLink && (
+          <button className="github-btn" onClick={() => window.location.href = project.githubLink}>
+            GitHub
+          </button>
+        )}
+        {project.demoLink && (
+          <button className= " btn" onClick={() => window.location.href = project.demoLink}>
           Live Demo
         </button>
+        )}
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import profilePicture from '../../assets/CompositePhoto.jpg'
 import { FaGraduationCap } from "react-icons/fa";
 import {BsBookmarkStar} from 'react-icons/bs'
 import {TfiWorld} from 'react-icons/tfi'
+import { AiOutlineHome } from 'react-icons/ai';
 
 const About = () => {
   return (
@@ -17,6 +18,13 @@ const About = () => {
             </div>
           </div>
           <div className="about__content">
+            <p>
+              Currently, I am a Graduate Student at The Ohio State University pursuing a Master's in Computer Science and Engineering.
+              I am extremely passionate about the growing field of artificial intelligence and machine learning - and it's implications on the field
+              of Computer Science. In addition to being a full-time student, I work as both a data science contractor at Vanguard, and a 
+              Graduate Teaching Associate at The Ohio State University. My previous software engineering experience, combined with current work on 
+              AI/ML gives me a unique perspective on the field of Computer Science. I am always looking for new opportunities to learn and grow in the field.
+              </p>
             <div className="about__cards">
               <article className='about__card'>
                   <FaGraduationCap className='about__icon'/>
@@ -34,27 +42,17 @@ const About = () => {
               <article className='about__card'>
                   <TfiWorld className='about__icon'/>
                   <h2>Previous Experience</h2>
-                  <small>
-                    <ul>
-                      <li>Optum (Summer 2022 - Software Engineering Intern)</li>
-                      <li>Ab Initio (Summer 2023 - Software Engineering Intern)</li>
-                      <li>Vanguard (Autumn 2023 : Present - Data Scientist)</li>
-                    </ul>
-                  </small>
+                    <b>
+                      <h5>Optum (Summer 2022) - Software Engineering Intern</h5>
+                      <h5>Ab Initio (Summer 2023) - Software Engineering Intern</h5>
+                      <h5>Vanguard (Autumn 2023 : Present) - Data Scientist</h5>
+                      <h5>The Ohio State University (Spring 2024 : Present) - Graduate Teaching Associate</h5>
+                    </b>
               </article>
 
               
 
             </div>
-            <p>
-                    I'm a <b>Software Engineering Undergradute</b> at the University of Kelaniya. 
-                    I'm an enthusiastic and driven Software Engineering student seeking a challenging internship opportunity to apply 
-                    and expand my technical skills. 
-                    With a strong academic foundation in software engineering and hands-on experience in various programming languages,
-                    I am eager to contribute to innovative projects and learn from experienced professionals in the industry. I am a quick learner who is always ready to face challenges.
-                    
-            </p>
-
           </div>
       </div>
     </section>
