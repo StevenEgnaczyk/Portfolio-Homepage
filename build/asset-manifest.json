@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/my-portfolio/static/css/main.a3b53edf.css",
+    "main.js": "/my-portfolio/static/js/main.b742109c.js",
+    "static/media/professional-headshot.jpg": "/my-portfolio/static/media/professional-headshot.0b04c7a442d2c42370a0.jpg",
+    "static/media/NullPointerException_1.png": "/my-portfolio/static/media/NullPointerException_1.f07c09dc178dce73e1b0.png",
+    "static/media/NullPointerException_2.png": "/my-portfolio/static/media/NullPointerException_2.b740804335baa31b7ae0.png",
+    "static/media/LOZ_3.png": "/my-portfolio/static/media/LOZ_3.e5cfc111075a09281b65.png",
+    "static/media/NullPointerException_3.png": "/my-portfolio/static/media/NullPointerException_3.30332acbd0b86dc9c131.png",
+    "static/media/CompositePhoto.jpg": "/my-portfolio/static/media/CompositePhoto.15b26d25e708974c488f.jpg",
+    "static/media/nba_2.png": "/my-portfolio/static/media/nba_2.8192c4458dbb8655a9cf.png",
+    "static/media/nba_3.png": "/my-portfolio/static/media/nba_3.b69b3d6d46debe9f7412.png",
+    "static/media/nba_1.png": "/my-portfolio/static/media/nba_1.66f49892f581f798e26e.png",
+    "static/media/SpotifyGenie_2.png": "/my-portfolio/static/media/SpotifyGenie_2.d027e86dce111ff48720.png",
+    "static/media/LOZ_1.png": "/my-portfolio/static/media/LOZ_1.34d449050ca11354a208.png",
+    "static/media/LOZ_2.png": "/my-portfolio/static/media/LOZ_2.36a9393e841a2f6c72a2.png",
+    "static/media/SpotifyGenie_3.png": "/my-portfolio/static/media/SpotifyGenie_3.9ef30fee9b6ad626df49.png",
+    "static/media/SortingAlgorithmVisualizer_4.png": "/my-portfolio/static/media/SortingAlgorithmVisualizer_4.90309d37b27fc7731f8e.png",
+    "static/media/SpotifyGenie_1.png": "/my-portfolio/static/media/SpotifyGenie_1.f088c78bcfce0cbc2331.png",
+    "static/media/StevenEgnaczykResume.pdf": "/my-portfolio/static/media/StevenEgnaczykResume.066486a243013adb45c2.pdf",
+    "static/media/SortingAlgorithmVisualizer_1.png": "/my-portfolio/static/media/SortingAlgorithmVisualizer_1.804ca2bbf7177ae7a686.png",
+    "static/media/SortingAlgorithmVisualizer_2.png": "/my-portfolio/static/media/SortingAlgorithmVisualizer_2.52755e4f8231ec3dd5ff.png",
+    "static/media/SortingAlgorithmVisualizer_3.png": "/my-portfolio/static/media/SortingAlgorithmVisualizer_3.215ff918ee169ec38434.png",
+    "index.html": "/my-portfolio/index.html",
+    "main.a3b53edf.css.map": "/my-portfolio/static/css/main.a3b53edf.css.map",
+    "main.b742109c.js.map": "/my-portfolio/static/js/main.b742109c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a3b53edf.css",
+    "static/js/main.b742109c.js"
+  ]
+}
