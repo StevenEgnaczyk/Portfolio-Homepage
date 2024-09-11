@@ -39,9 +39,20 @@ const Header = () => {
             ))}
           </div>
         </div>
+        <div className="social-dropdown">
+          <button className="btn btn-secondary">
+            Social Links
+          </button>
+          <ul className="dropdown-menu">
+            <li><a href="https://github.com/StevenEgnaczyk" target="_blank" rel="noreferrer">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/steven-egnaczyk-949a71208/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+            <li><a href="https://www.youtube.com/channel/UCmWDlvMYYEbW42B8JyxFBcA" target="_blank" rel="noreferrer">YouTube</a></li>
+            <li><a href="#recent-project" target="_blank" rel="noreferrer">Recent Project</a></li>
+          </ul>
+        </div>
       </div>
     </header>
   )
 }
 
-export default Header
+export default Header;

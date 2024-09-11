@@ -1,3 +1,4 @@
+/* General header styles */
 header {
     height: 100vh;
     padding-top: 1rem;
@@ -16,34 +17,15 @@ header {
     position: relative;
 }
 
-/* Applying CSS for CTA */
+/* Contact buttons styles */
 .contact_buttons {
-    margin-top: 0.5rem;  /*to push buttons little bit down*/
+    margin-top: 0.5rem;  /* Push buttons down */
     display: flex;
     gap: 1.2rem;
     justify-content: center;
 }
 
-/* Applying CSS for HeaderSocials */
-.header__socials {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-items: center;
-    gap: 0.8rem;
-    position: absolute;
-    left: 0;
-    bottom: 3rem;
-}
-
-.header__socials::after {
-    content: "";
-    width: 1px;
-    height: 2rem;
-    background: var(--color-primary);
-}
-
-/* Applying CSS for My image */
+/* Professional headshot styles */
 .professional-headshot {
     width: 22rem;
     height: 23.5rem;
@@ -61,7 +43,7 @@ header {
     height: 100%;
 }
 
-/* Container for icons around the image */
+/* Floating icons container */
 .icon-bubble-container {
     position: relative;
     width: 100%;
@@ -69,6 +51,7 @@ header {
     pointer-events: none;
 }
 
+/* Social icons container */
 .social-icons-container {
     display: flex;
     flex-wrap: wrap;  /* Ensure the icons wrap if necessary */
@@ -96,28 +79,29 @@ header {
     text-decoration: none;  /* Remove underline from links */
 }
 
-/* Style for labels */
-.social-icon-label {
-    margin-top: 0.5rem;  /* Space between icon and label */
-    font-size: 20px;  /* Smaller font size for labels */
-    color: #fff;  /* Adjust color as needed */
-    text-align: center;  /* Center text under icons */
-    line-height: 1.2;  /* Adjust line height for better readability */
-}
-
-/* Hover effect */
+/* Hover effect for icons */
 .social-icon:hover {
     font-size: 70px;
     text-align: center;
     animation-play-state: paused !important;  /* Stop the movement */
 }
 
-/* Example random positions around the image */
+/* Social icon labels */
+.social-icon-label {
+    margin-top: 0.5rem;  /* Space between icon and label */
+    font-size: 20px;  /* Font size for labels */
+    color: #fff;  /* Adjust color as needed */
+    text-align: center;  /* Center text under icons */
+    line-height: 1.2;  /* Adjust line height for readability */
+}
+
+/* Random positions for the floating icons */
 .social-icon-0 { top:5%; left: 10%; animation-delay: 0s; }
 .social-icon-1 { top: 30%; left: 10%; animation-delay: 0s; }
 .social-icon-2 { top: 5%; left: 80%; animation-delay: 0s; }
 .social-icon-3 { top: 30%; left: 80%; animation-delay: 0s; }
 
+/* Animation for the floating effect */
 @keyframes bubble {
     0%, 100% {
         transform: translateY(0);
@@ -127,17 +111,47 @@ header {
     }
 }
 
-/* Media queries for small devices (Mobiles) */
-@media screen and (max-width: 600px) {
-    header {
-        height: 100vh;
-    }
+/* Styles for the dropdown */
+.social-dropdown {
+    display: none; /* Hidden by default */
+    position: relative;
+}
 
-    .header__socials, .scroll__down {
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    list-style: none;
+    z-index: 100;
+}
+
+.dropdown-menu li {
+    padding: 0.5rem 1rem;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: var(--color-primary);
+}
+
+/* Show dropdown menu on hover */
+.social-dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Media queries for small devices (Mobiles) */
+@media screen and (max-width: 800px) {
+    /* Hide the floating icons on small screens */
+    .social-icons-container {
         display: none;
     }
 
-    .me > img {
-        margin-top: 2.5rem;
+    /* Show the dropdown on small screens */
+    .social-dropdown {
+        display: block;
     }
 }
