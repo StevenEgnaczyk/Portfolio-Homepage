@@ -160,8 +160,8 @@ header {
     background-color: var(--color-gray);
 }
 
-/* Media queries for small devices (Mobiles) */
-@media screen and (max-width: 800px) {
+/* Media queries for medium devices (Tablets) */
+@media screen and (max-width: 1200px) {
     /* Hide the floating icons on small screens */
     .social-icons-container {
         display: none;
@@ -170,5 +170,46 @@ header {
     /* Show the dropdown on small screens */
     .social-dropdown {
         display: block;
+    }
+
+    /* Adjust the size of the header text */
+    .header__container {
+        width: 80%;
+    }
+}
+
+/* Media queries for small devices (Mobiles) */
+@media screen and (max-width: 600px) {
+
+    header {
+        height: 80vh;
+    }
+
+    /* Adjust the size of the header text */
+    .header__container {
+        width: 100%;
+    }
+
+    /* Adjust the size of the professional headshot */
+    .professional-headshot {
+        width: 18rem;
+        height: 12rem;
+    }
+
+    .header__container h1 {
+        font-size: 2.5rem;
+    }
+
+    .contact_buttons {
+        gap: 0.25rem;
+    }
+    .btn {
+        font-size: medium;
+        padding: 0.5rem 0.5rem;
+    }
+
+    .professional-headshot {
+        width: 18rem;
+        height: 25rem;
     }
 }

@@ -1,22 +1,21 @@
-import React from 'react'
-import Header from './components/header/Header'
-import Nav from './components/nav/Nav'
-import About from './components/about/About'
-import Projects from './components/Projects/Projects'
-import Footer from './components/footer/Footer'
+import React, { useState } from 'react';
+
+import HomeScreen from './screens/HomeScreen.jsx';
+import APIScreen from './screens/NBA-API.jsx';
 
 const App = () => {
-  return (
-    
-    <>
-        <Header/>
-        <Nav/>
-        <Projects/>
-        <About/>
-        <Footer/>
+    const [currentScreen, setCurrentScreen] = useState('Home');
 
-    </>
-  )
+    const handleNavigation = (screen) => {
+        setCurrentScreen(screen);
+    };
+
+    return (
+        <>
+            {currentScreen === 'Home' && <HomeScreen handleNavigation={handleNavigation} />}
+            {currentScreen === 'API' && <APIScreen handleNavigation={handleNavigation} />}
+        </>
+    );
 }
 
-export default App
+export default App;
