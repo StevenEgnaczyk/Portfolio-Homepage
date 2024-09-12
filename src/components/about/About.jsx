@@ -32,13 +32,6 @@ const About = () => {
                   <b><h5>BS in Computer Science (2020-2024)<br/><i>The Ohio State University</i></h5></b>
                   <b><h5>MS in Computer Science (2024-2025 Expected)<br/><i>The Ohio State University</i></h5></b>
               </article>
-
-              <article className='about__card'>
-                  <BsBookmarkStar className='about__icon'/>
-                  <h2>Academics</h2>
-                  <b><h5>Undergraduate GPA: 3.6<br/>Undergraduate Major GPA: 3.5</h5></b>
-              </article>
-
               <article className='about__card'>
                   <TfiWorld className='about__icon'/>
                   <h2>Previous Experience</h2>

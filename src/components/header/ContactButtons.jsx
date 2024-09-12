@@ -13,12 +13,12 @@ const socialLinks = [
 const ContactButtons = () => {
   return (
     <div className="contact_buttons">
-      <a href={CV} className="btn" target="_blank" rel="noreferrer">Download CV</a>
-      <a href="#contacts" className="btn btn-primary">Contact Me</a>
+      <a href={CV} className="btn btn-primary" target="_blank" rel="noreferrer">Download CV</a>
+      <a href="#contacts" className="btn btn-secondary">Contact Me</a>
       
       {/* Social links dropdown, visible only on small screens */}
       <div className="social-dropdown">
-        <button className="btn-primary btn">Social Links</button>
+        <button className="btn socials-btn">Social Links</button>
         <ul className="dropdown-menu">
           {socialLinks.map((social, index) => (
             <li key={index}>

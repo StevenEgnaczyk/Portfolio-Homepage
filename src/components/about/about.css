@@ -11,7 +11,7 @@
 .about__container{
     align-items: center;
     display: grid;
-    grid-template-columns: 20% 75%;
+    grid-template-columns: 30% 65%;
     gap: 5%;
 }
 
@@ -22,20 +22,13 @@
 }
 
 .about__me-image{
-
     border-radius: 2rem;
     overflow: hidden;
 }
 
-.about__me-image:hover{
-
-    transform: rotate(0);
-}
-
 .about__cards{
-
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
 }
 

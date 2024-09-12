@@ -94,12 +94,12 @@ const Project = ({ project }) => {
       <p className="project-description">{project.description}</p>
       <div className="btn-container">
         {project.githubLink && (
-          <button className="github-btn" onClick={() => window.location.href = project.githubLink}>
+          <button className="btn github-btn" onClick={() => window.location.href = project.githubLink}>
             GitHub
           </button>
         )}
         {project.demoLink && (
-          <button className= " btn" onClick={() => window.location.href = project.demoLink}>
+          <button className= "btn btn-primary" onClick={() => window.location.href = project.demoLink}>
           Live Demo
         </button>
         )}
@@ -117,7 +117,7 @@ const Projects = () => {
 
   return (
     <section id="projects">
-      <h1 className="title">Recent Projects</h1>
+      <h1 className="title">Projects</h1>
       <div className="projects-container">
         <div className="project-tabs">
           <input type="radio" id="all" name="category" checked={selectedCategory === "all"} onChange={() => handleTabChange("all")} />
