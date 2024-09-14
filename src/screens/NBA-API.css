@@ -1,5 +1,5 @@
 /* NBA-API.css */
-body {
+.nba-api-page {
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -10,7 +10,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.container {
+.nba-api-container {
     width: 90%;
     height: 95%;
     display: flex;
@@ -23,33 +23,33 @@ body {
     background-color: #fff;
 }
 
-h1 {
+.nba-api-container h1 {
     margin: 0 0 20px 0;
 }
 
-.dropdown-container {
+.nba-api-dropdown-container {
     display: flex;
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
 }
 
-.dropdown {
+.nba-api-dropdown {
     margin: 0 10px;
     flex: 1;
 }
 
-label {
+.nba-api-label {
     margin-bottom: 5px;
 }
 
-select {
+.nba-api-select {
     width: 100%;
     padding: 10px;
     font-size: 16px;
 }
 
-.placeholder-image {
+.nba-api-placeholder-image {
     width: 100%;
     height: auto;
     max-height: 80%; /* Adjust as needed */
@@ -57,7 +57,7 @@ select {
     margin: 20px 0;
 }
 
-.submit-btn {
+.nba-api-submit-btn {
     padding: 10px 20px;
     font-size: 16px;
     color: #fff;
@@ -68,6 +68,6 @@ select {
     transition: background-color 0.3s ease;
 }
 
-.submit-btn:hover {
+.nba-api-submit-btn:hover {
     background-color: #005a9e; /* Darker NBA blue */
 }
