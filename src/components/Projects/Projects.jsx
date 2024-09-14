@@ -44,7 +44,7 @@ const projectsData = [
     title: "NBA Stats API",
     category: "data-science",
     description: "API that retrieves NBA team statistics and displays them in a user-friendly format.",
-    tags: ["Python", "API", "Matplotlib"],
+    tags: ["Python", "API", "Matplotlib", "Render"],
     images: [
       require("../../assets/Projects/NBA API/nba_1.png"),
       require("../../assets/Projects/NBA API/nba_2.png"),
@@ -64,6 +64,19 @@ const projectsData = [
       require("../../assets/Projects/NullPointerException/NullPointerException_3.png"),
     ],
     demoLink: "https://www.youtube.com/channel/UCmWDlvMYYEbW42B8JyFBcA",
+  },
+  {
+    title: "Portfolio Homepage",
+    category: "Software Development",
+    description: "Website to host my portfolio of projects and information.",
+    tags: ["Flask", "React", "Vercel"],
+    images: [
+      require("../../assets/Projects/Portfolio Homepage/Portfolio_1.png"),
+      require("../../assets/Projects/Portfolio Homepage/Portfolio_2.png"),
+      require("../../assets/Projects/Portfolio Homepage/Portfolio_3.png"),
+    ],
+    githubLink: "https://github.com/StevenEgnaczyk/Portfolio-Homepage",
+    demoLink: "https://www.stevenegg.com",
   }
 ];
 

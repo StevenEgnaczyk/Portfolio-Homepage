@@ -244,6 +244,16 @@
     color: white;
 }
 
+.vercel-tag {
+    background-color: #763DA9; /* Vercel black */
+    color: white;
+}
+
+.render-tag {
+    background-color: #f24c27; /* Render red */
+    color: white;
+}
+
 .slideshow-container {
     position: relative;
     max-width: 100%;
