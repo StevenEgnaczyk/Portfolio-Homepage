@@ -7,6 +7,9 @@
           "distDir": "build"
         }
       }
+    ],
+    "rewrites": [
+    { "source": "/nba-api", "destination": "/index.html" }
     ]
   }
   
