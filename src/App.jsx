@@ -1,20 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import HomeScreen from './screens/HomeScreen.jsx';
-import APIScreen from './screens/NBA-API.jsx';
+import NBA_API from './screens/NBA-API.jsx';
 
 const App = () => {
-    const [currentScreen, setCurrentScreen] = useState('Home');
-
-    const handleNavigation = (screen) => {
-        setCurrentScreen(screen);
-    };
-
     return (
-        <>
-            {currentScreen === 'Home' && <HomeScreen handleNavigation={handleNavigation} />}
-            {currentScreen === 'API' && <APIScreen handleNavigation={handleNavigation} />}
-        </>
+        <Router>
+            <Routes>
+                <Route path="/" element={<HomeScreen />} />
+                <Route path="/nba-api" element={<NBA_API />} />
+            </Routes>
+        </Router>
     );
 }
 

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigation } from '@react-navigation/native';
 import "./Projects.css";
 
 const projectsData = [
@@ -50,6 +51,7 @@ const projectsData = [
       require("../../assets/Projects/NBA API/nba_3.png"),
     ],
     githubLink: "https://github.com/StevenEgnaczyk/NBA-Statistics-Visualizer",
+    demoLink: "/nba-api"
   },
   {
     title: "NullPointerException",
@@ -99,9 +101,9 @@ const Project = ({ project }) => {
           </button>
         )}
         {project.demoLink && (
-          <button className= "btn btn-primary" onClick={() => window.location.href = project.demoLink}>
-          Live Demo
-        </button>
+          <button className="btn btn-primary" onClick={() => navigation.navigate(project.demoLink)}>
+            Live Demo
+          </button>
         )}
       </div>
     </div>

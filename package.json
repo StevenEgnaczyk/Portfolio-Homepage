@@ -20,6 +20,7 @@
     "react-native-safe-area-context": "^4.11.0",
     "react-native-screens": "^3.34.0",
     "react-native-web": "^0.19.12",
+    "react-router-dom": "^6.26.2",
     "react-scrollspy": "^3.4.3",
     "vercel": "^37.4.0",
     "web-vitals": "^2.1.4"
