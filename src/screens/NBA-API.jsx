@@ -104,7 +104,6 @@ const NBA_API = () => {
               value={stat1}
               onChange={(e) => setStat1(e.target.value)}
             >
-              <option value="">Select a statistic</option>
               <option value="Points">Points</option>
               <option value="Field Goals Made">Field Goals Made</option>
               <option value="Field Goals Attempted">Field Goals Attempted</option>
@@ -134,7 +133,6 @@ const NBA_API = () => {
               value={stat2}
               onChange={(e) => setStat2(e.target.value)}
             >
-              <option value="">Select a statistic</option>
               <option value="Points">Points</option>
               <option value="Field Goals Made">Field Goals Made</option>
               <option value="Field Goals Attempted">Field Goals Attempted</option>
