@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
 import './NBA-API.css'; // Import the CSS file
-
+import PlaceHolder_Image from '../assets/Projects/NBA API/PlaceHolder_Image.png'; // Import the placeholder image
 const NBA_API = () => {
   const [team, setTeam] = useState('Atlanta Hawks');
   const [stat1, setStat1] = useState('Points');
   const [stat2, setStat2] = useState('Points');
-  const [imageSrc, setImageSrc] = useState('https://via.placeholder.com/800x450');
+  const [imageSrc, setImageSrc] = useState(PlaceHolder_Image); // Default placeholder image
+  const [loading, setLoading] = useState(false); // Track loading state
+  const [progress, setProgress] = useState(0); // Track progress for progress bar
 
   // Replace with your Render endpoint URL
   const API_URL = 'https://nba-statistics-visualizer.onrender.com/submit';
 
   const handleSubmit = () => {
+    setLoading(true);
+    setProgress(0); // Reset progress
     fetch(API_URL, {
       method: 'POST',
       headers: {
@@ -31,10 +35,12 @@ const NBA_API = () => {
       .then(blob => {
         const url = URL.createObjectURL(blob);
         setImageSrc(url);
+        setLoading(false); // Remove loading state
       })
       .catch(error => {
         console.error('Error:', error);
         alert('An error occurred: ' + error.message);
+        setLoading(false); // Ensure loading state is removed on error
       });
   };
 
@@ -42,6 +48,12 @@ const NBA_API = () => {
     <div className="nba-api-page">
       <div className="nba-api-container">
         <h1>NBA Stat Visualizer</h1>
+        <p className="nba-api-description">
+          This NBA Stat Visualizer allows you to select any NBA team and two statistics
+          to compare. Once you make your selections, the program generates a visualization
+          based on the data. Click 'Submit' and wait for the visual representation of the selected stats.
+        </p>
+        
         <div className="nba-api-dropdown-container">
           <div className="nba-api-dropdown">
             <label htmlFor="teams" className="nba-api-label">Select NBA Team:</label>
@@ -49,12 +61,8 @@ const NBA_API = () => {
               id="teams"
               className="nba-api-select"
               value={team}
-              onChange={(e) => {
-                console.log('Team changed:', e.target.value); // Log changes
-                setTeam(e.target.value);
-              }}
+              onChange={(e) => setTeam(e.target.value)}
             >
-              <option value="">Select a team</option>
               <option value="Atlanta Hawks">Atlanta Hawks</option>
               <option value="Boston Celtics">Boston Celtics</option>
               <option value="Brooklyn Nets">Brooklyn Nets</option>
@@ -67,7 +75,7 @@ const NBA_API = () => {
               <option value="Golden State Warriors">Golden State Warriors</option>
               <option value="Houston Rockets">Houston Rockets</option>
               <option value="Indiana Pacers">Indiana Pacers</option>
-              <option value="Los Angeles Clippers">Los Angeles Clippers</option>
+              <option value="LA Clippers">LA Clippers</option>
               <option value="Los Angeles Lakers">Los Angeles Lakers</option>
               <option value="Memphis Grizzlies">Memphis Grizzlies</option>
               <option value="Miami Heat">Miami Heat</option>
@@ -87,16 +95,14 @@ const NBA_API = () => {
               <option value="Washington Wizards">Washington Wizards</option>
             </select>
           </div>
+
           <div className="nba-api-dropdown">
             <label htmlFor="stat1" className="nba-api-label">Select Statistic 1:</label>
             <select
               id="stat1"
               className="nba-api-select"
               value={stat1}
-              onChange={(e) => {
-                console.log('Stat1 changed:', e.target.value); // Log changes
-                setStat1(e.target.value);
-              }}
+              onChange={(e) => setStat1(e.target.value)}
             >
               <option value="">Select a statistic</option>
               <option value="Points">Points</option>
@@ -119,16 +125,14 @@ const NBA_API = () => {
               <option value="Personal Fouls">Personal Fouls</option>
             </select>
           </div>
+
           <div className="nba-api-dropdown">
             <label htmlFor="stat2" className="nba-api-label">Select Statistic 2:</label>
             <select
               id="stat2"
               className="nba-api-select"
               value={stat2}
-              onChange={(e) => {
-                console.log('Stat2 changed:', e.target.value); // Log changes
-                setStat2(e.target.value);
-              }}
+              onChange={(e) => setStat2(e.target.value)}
             >
               <option value="">Select a statistic</option>
               <option value="Points">Points</option>
@@ -152,8 +156,23 @@ const NBA_API = () => {
             </select>
           </div>
         </div>
-        <img src={imageSrc} alt="Visualization" className="nba-api-placeholder-image" />
-        <button className="nba-api-submit-btn" onClick={handleSubmit}>Submit</button>
+        
+        {/* Conditionally render the progress bar or image */}
+        {loading ? (
+          <div className="nba-api-progress-container">
+            <div className="nba-api-progress-bar" style={{ width: `${progress}%` }}></div>
+          </div>
+        ) : (
+          <img src={imageSrc} alt="Visualization" className="nba-api-placeholder-image" />
+        )}
+
+        <button
+          className="nba-api-submit-btn"
+          onClick={handleSubmit}
+          disabled={loading} // Disable button during loading
+        >
+          Submit
+        </button>
       </div>
     </div>
   );
