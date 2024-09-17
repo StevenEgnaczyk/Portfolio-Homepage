@@ -47,7 +47,7 @@ const Header = () => {
             <li><a href="https://github.com/StevenEgnaczyk" target="_blank" rel="noreferrer">GitHub</a></li>
             <li><a href="https://www.linkedin.com/in/steven-egnaczyk-949a71208/" target="_blank" rel="noreferrer">LinkedIn</a></li>
             <li><a href="https://www.youtube.com/channel/UCmWDlvMYYEbW42B8JyxFBcA" target="_blank" rel="noreferrer">YouTube</a></li>
-            <li><a href="#recent-project" target="_blank" rel="noreferrer">Recent Project</a></li>
+            <li><a href="#recent-project" target="/nba-api" rel="noreferrer">Recent Project</a></li>
           </ul>
         </div>
       </div>

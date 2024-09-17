@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import CV from '../../assets/StevenEgnaczykResume.pdf';
 import { FaLaptopCode, FaGithub, FaLinkedin, FaYoutube } from 'react-icons/fa';
 
@@ -14,9 +14,14 @@ const ContactButtons = () => {
   return (
     <div className="contact_buttons">
       <a href={CV} className="btn btn-primary" target="_blank" rel="noreferrer">Download CV</a>
-      <a href="#contacts" className="btn btn-secondary">Contact Me</a>
       
-      {/* Social links dropdown, visible only on small screens */}
+      <a 
+        href="mailto:stevenegnaczyk@gmail.com?subject=Inquiry&body=Hello Steven,%0D%0A%0D%0AI am reaching out to you regarding..."
+        className="btn btn-secondary"
+      >
+        Contact Me
+      </a>
+      
       <div className="social-dropdown">
         <button className="btn socials-btn">Social Links</button>
         <ul className="dropdown-menu">
