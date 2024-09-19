@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Analytics } from "@vercel/analytics/react";
 import HomePage from './screens/HomePage.jsx'
 import NBA_API from './screens/NBA-API';
 
