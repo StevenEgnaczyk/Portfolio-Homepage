@@ -7,14 +7,16 @@ import NBA_API from './screens/NBA-API';
 
 const App = () => {
   return (
-    <Analytics/>
-    <SpeedInsights/>
+    <div>
+    <Analytics />
+    <SpeedInsights />
     <Router>
         <Routes>
             <Route path="/" element={<HomePage/>}/>
             <Route path="/nba-api" element={<NBA_API/>}/>
         </Routes>
     </Router>
+    </div>
   )
 }
 
