@@ -192,8 +192,8 @@ header {
 
     /* Adjust the size of the professional headshot */
     .professional-headshot {
-        width: 18rem;
-        height: 12rem;
+        width: 12rem;
+        height: 8rem;
     }
 
     .header__container h1 {
