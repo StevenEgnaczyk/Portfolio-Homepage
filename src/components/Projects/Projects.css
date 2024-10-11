@@ -254,6 +254,16 @@
     color: white;
 }
 
+.firebase-tag {
+    background-color: #FFCA28; /* Firebase yellow */
+    color: black;
+}
+
+.firestore-tag {
+    background-color: #FFA611; /* Firestore orange */
+    color: white;
+}
+
 .slideshow-container {
     position: relative;
     max-width: 100%;

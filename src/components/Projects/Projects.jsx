@@ -14,6 +14,8 @@ const projectsData = [
       require("../../assets/Projects/SpotifyGenie/SpotifyGenie_3.png"),
     ],
     githubLink: "https://github.com/LukeAMcSherry/CSE5914-SpotifyGroup",
+    demoLink: "",
+    dates: { start: new Date(2024, 0), end: new Date(2024, 4) }
   },
   {
     title: "Sorting Visualizer",
@@ -27,6 +29,8 @@ const projectsData = [
       require("../../assets/Projects/SortingAlgorithmVisualizer/SortingAlgorithmVisualizer_4.png"),
     ],
     githubLink: "https://github.com/StevenEgnaczyk/Sorting-Algorithm-Visualizer",
+    demoLink: "",
+    dates: { start: new Date(2019, 11), end: new Date(2020, 5) }
   },
   {
     title: "Legend of Zelda Game",
@@ -39,6 +43,8 @@ const projectsData = [
       require("../../assets/Projects/LegendOfZelda/LOZ_1.png"),
     ],
     githubLink: "https://github.com/StevenEgnaczyk/Legend-of-Zelda-Game",
+    demoLink: "",
+    dates: { start: new Date(2022, 8), end: new Date(2022, 11) }
   },
   {
     title: "NBA Stats API",
@@ -51,7 +57,8 @@ const projectsData = [
       require("../../assets/Projects/NBA API/nba_3.png"),
     ],
     githubLink: "https://github.com/StevenEgnaczyk/NBA-Statistics-Visualizer",
-    demoLink: "/nba-api"
+    demoLink: "/nba-api",
+    dates: { start: new Date(2024, 7), end: new Date(2024, 8) }
   },
   {
     title: "NullPointerException",
@@ -63,11 +70,13 @@ const projectsData = [
       require("../../assets/Projects/NullPointerException/NullPointerException_2.png"),
       require("../../assets/Projects/NullPointerException/NullPointerException_3.png"),
     ],
+    githubLink: "",
     demoLink: "https://www.youtube.com/channel/UCmWDlvMYYEbW42B8JyFBcA",
+    dates: { start: new Date(2019, 5), end: new Date(2022, 5) }
   },
   {
     title: "Portfolio Homepage",
-    category: "Software Development",
+    category: "software-development",
     description: "Website to host my portfolio of projects and information.",
     tags: ["Flask", "React", "Vercel"],
     images: [
@@ -77,8 +86,26 @@ const projectsData = [
     ],
     githubLink: "https://github.com/StevenEgnaczyk/Portfolio-Homepage",
     demoLink: "https://www.stevenegg.com",
+    dates: { start: new Date(2024, 7), end: new Date(2024, 9) }
+  },
+  {
+    title: "DataBaseD",
+    category: "software-development",
+    description: "Online Database to store old study guides, notes, and other educational material.",
+    tags: ["React", "Firebase", "Firestore"],
+    images: [
+      require("../../assets/Projects/Databased/Databased_1.png"),
+      require("../../assets/Projects/Databased/Databased_2.png"),
+      require("../../assets/Projects/Databased/Databased_3.png"),
+    ],
+    githubLink: "https://github.com/StevenEgnaczyk/DatabaseD",
+    demoLink: "",
+    dates: { start: new Date(2024, 9), end: new Date(2024, 9) }
   }
 ];
+
+projectsData.sort((a, b) => b.dates.end - a.dates.end);
+
 
 const Project = ({ project }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -91,9 +118,18 @@ const Project = ({ project }) => {
     setCurrentSlide((currentSlide - 1 + project.images.length) % project.images.length);
   };
 
+  const formatDate = (date) => {
+    return date instanceof Date && !isNaN(date)
+      ? `${date.toLocaleString("default", { month: "short" })} ${date.getFullYear()}`
+      : "Present";
+  };
+
   return (
     <div className={`project show ${project.category}`}>
       <h2 className="project-title">{project.title}</h2>
+      <p className="project-dates">
+        {formatDate(project.dates.start)} - {formatDate(project.dates.end)}
+      </p>
       <div className="tags-container">
         {project.tags.map(tag => (
           <span key={tag} className={`tag ${tag.toLowerCase().replace(/\s+/g, '-')}-tag`}>{tag}</span>
