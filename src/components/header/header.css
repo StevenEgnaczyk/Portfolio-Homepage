@@ -192,24 +192,33 @@ header {
 
     /* Adjust the size of the professional headshot */
     .professional-headshot {
-        width: 12rem;
-        height: 8rem;
+        width: 70vw;
+        height: 40vh;
+    }
+
+    .icon-bubble-container {
+        height: auto;
     }
 
     .header__container h1 {
         font-size: 2.5rem;
     }
 
-    .contact_buttons {
-        gap: 0.25rem;
+    .header__container h2 {
+        font-size: 1rem;
     }
+
+    .contact_buttons {
+        gap: 0.3rem;
+    }
+
+    .contact_buttons .btn {
+        font-size: medium;
+        padding: 0.3rem 0.3rem;
+    }
+
     .btn {
         font-size: medium;
         padding: 0.5rem 0.5rem;
-    }
-
-    .professional-headshot {
-        width: 18rem;
-        height: 25rem;
     }
 }
