@@ -114,8 +114,8 @@
 
 .projects {
     display: grid;
-    grid-template-columns: repeat(4, 24%);
-    grid-gap: 1.25%;
+    grid-template-columns: repeat(3, 32%);
+    grid-gap: 1.85%;
     margin-top: 0.5rem;
 }
 
@@ -261,6 +261,11 @@
 
 .firestore-tag {
     background-color: #FFA611; /* Firestore orange */
+    color: white;
+}
+
+.hackathon-tag {
+    background-color: #00b140;
     color: white;
 }
 

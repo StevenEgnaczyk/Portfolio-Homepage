@@ -1,0 +1,33 @@
+
+* {
+    margin: 0;
+}
+
+.profile-row {
+    background-color: #999999;
+    padding: 1rem;
+    margin: 4px;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.user-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.linkedTitle {
+    margin: auto 0;
+    text-align: left;
+    font-size: 1.2rem;
+    color: black;
+}
+
+p {
+    font-size: 1rem;
+}

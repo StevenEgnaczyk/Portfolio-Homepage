@@ -101,7 +101,20 @@ const projectsData = [
     githubLink: "https://github.com/StevenEgnaczyk/DatabaseD",
     demoLink: "",
     dates: { start: new Date(2024, 9), end: new Date(2024, 9) }
-  }
+  }, {
+    title: "LockedIn",
+    category: "software-development",
+    description: "LinkedIn network visualization tool that allows users to explore their connections using react force graph.",
+    tags: ["React", "Firestore", "Firebase", "Hackathon"],
+    images: [
+      require("../../assets/Projects/LockedIn/LockedIn-1.png"),
+      require("../../assets/Projects/LockedIn/LockedIn-2.png"),
+      require("../../assets/Projects/LockedIn/LockedIn-3.png"),
+    ],
+    githubLink: "https://github.com/StevenEgnaczyk/LockedIn",
+    demoLink: "",
+    dates: { start: new Date(2024, 9), end: new Date(2024, 9) }
+  },
 ];
 
 projectsData.sort((a, b) => b.dates.end - a.dates.end);

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './NBA-API.css'; // Import the CSS file
-import PlaceHolder_Image from '../assets/Projects/NBA API/PlaceHolder_Image.png'; // Import the placeholder image
+import PlaceHolder_Image from '../../assets/Projects/NBA API/placeholder.png'; // Import the placeholder image
 const NBA_API = () => {
-  const [team, setTeam] = useState('Atlanta Hawks');
-  const [stat1, setStat1] = useState('Points');
-  const [stat2, setStat2] = useState('Points');
+  const [team, setTeam] = useState('Dallas Mavericks');
+  const [stat1, setStat1] = useState('Rebounds');
+  const [stat2, setStat2] = useState('Rebounds');
   const [imageSrc, setImageSrc] = useState(PlaceHolder_Image); // Default placeholder image
   const [loading, setLoading] = useState(false); // Track loading state
   const [progress, setProgress] = useState(0); // Track progress for progress bar
