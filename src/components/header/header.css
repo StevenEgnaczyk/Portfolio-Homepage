@@ -113,7 +113,13 @@ header {
 
 /* Styles for the dropdown */
 .social-dropdown {
+    margin-top: 1rem;
     display: none; /* Hidden by default */
+    position: relative;
+}
+
+.contact-dropdown {
+    display: none;
     position: relative;
 }
 
@@ -168,7 +174,7 @@ header {
     }
 
     /* Show the dropdown on small screens */
-    .social-dropdown {
+    .contact-dropdown {
         display: block;
     }
 
@@ -193,7 +199,7 @@ header {
     /* Adjust the size of the professional headshot */
     .professional-headshot {
         width: 70vw;
-        height: 40vh;
+        height: 45vh;
     }
 
     .icon-bubble-container {

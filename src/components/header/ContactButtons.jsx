@@ -22,7 +22,7 @@ const ContactButtons = () => {
         Contact Me
       </a>
       
-      <div className="social-dropdown">
+      <div className="contact-dropdown">
         <button className="btn socials-btn">Social Links</button>
         <ul className="dropdown-menu">
           {socialLinks.map((social, index) => (

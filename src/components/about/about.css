@@ -91,11 +91,11 @@
 @media screen and (max-width: 600px) {
     .about__me {
         width: 65%;
-        margin: 0 auto 3rem;
+        margin: 0.25rem auto 0.25rem;
     }
 
     .about__cards {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: 1rem;
     }
 
@@ -105,5 +105,13 @@
 
     .about__content p {
         margin: 1.5rem 0;
+    }
+
+    .about__container p {
+        font-size: 0.75rem;
+    }
+
+    .about__card h5 {
+        font-size: 0.7rem;
     }
 }

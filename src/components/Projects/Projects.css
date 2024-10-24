@@ -312,8 +312,7 @@
 .project-description {
     color: var(--color-white);
     margin-top: 0.25rem;
-    margin-bottom: 0.5rem;
-    height: 5rem;
+    margin-bottom: 0.25rem;
     overflow: scroll;
 }
 
@@ -361,4 +360,52 @@
         grid-template-columns: repeat(2, 49%);
     }
     
+}
+
+@media screen and (max-width: 768px) {
+    .projects {
+        grid-template-columns: 100%;
+        grid-gap: 1rem;
+    }
+    
+    .project-tabs label {
+        font-size: 1.2rem;
+    }
+    
+    .project {
+        margin-right: 0;
+    }
+    
+    .tag {
+        margin-bottom: 0.5rem;
+    }
+
+    .project-img {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #projects h1 {
+        font-size: 1.5rem;
+    }
+    
+    .project-tabs label {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+    
+    .projects {
+        grid-template-columns: 100%;
+        grid-gap: 1rem;
+    }
+
+    .project {
+        padding: 0.5rem;
+    }
+
+    .project-title {
+        font-size: 1.25rem;
+    }
 }
