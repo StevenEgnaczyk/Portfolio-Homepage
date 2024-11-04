@@ -188,7 +188,7 @@ header {
 @media screen and (max-width: 600px) {
 
     header {
-        height: 80vh;
+        height: 50vh;
     }
 
     /* Adjust the size of the header text */
@@ -199,7 +199,12 @@ header {
     /* Adjust the size of the professional headshot */
     .professional-headshot {
         width: 70vw;
-        height: 45vh;
+        height: 30vh;
+    }
+
+    .professional-headshot img {
+        object-fit: cover; /* Keeps aspect ratio */
+        object-position: top; /* Keeps the top part of the image in view */
     }
 
     .icon-bubble-container {

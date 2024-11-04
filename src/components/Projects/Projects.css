@@ -355,14 +355,19 @@
     border-color: var(--color-github-green);
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1200px) {
     .projects {
         grid-template-columns: repeat(2, 49%);
     }
     
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
+    
+    .project-tabs {
+        flex-direction: column;
+    }
+
     .projects {
         grid-template-columns: 100%;
         grid-gap: 1rem;
