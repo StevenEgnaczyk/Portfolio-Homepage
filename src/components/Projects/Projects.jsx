@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigation } from '@react-navigation/native';
 import "./Projects.css";
 
@@ -174,9 +174,42 @@ const Project = ({ project }) => {
 
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [projectsPerPage, setProjectsPerPage] = useState(6);
+
+  useEffect(() => {
+    const updateProjectsPerPage = () => {
+      if (window.innerWidth > 1200) {
+        setProjectsPerPage(6); // 3 columns × 2 rows
+      } else if (window.innerWidth > 600) {
+        setProjectsPerPage(4); // 2 columns × 2 rows
+      } else {
+        setProjectsPerPage(2); // 1 column × 2 rows
+      }
+    };
+
+    updateProjectsPerPage();
+    window.addEventListener('resize', updateProjectsPerPage);
+    return () => window.removeEventListener('resize', updateProjectsPerPage);
+  }, []);
 
   const handleTabChange = (category) => {
     setSelectedCategory(category);
+    setCurrentPage(1);
+  };
+
+  const filteredProjects = projectsData.filter(
+    project => selectedCategory === "all" || project.category === selectedCategory
+  );
+  
+  const indexOfLastProject = currentPage * projectsPerPage;
+  const indexOfFirstProject = indexOfLastProject - projectsPerPage;
+  const currentProjects = filteredProjects.slice(indexOfFirstProject, indexOfLastProject);
+  const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
+
+  const handlePageChange = (newPage) => {
+    event.preventDefault();
+    setCurrentPage(newPage);
   };
 
   return (
@@ -201,12 +234,34 @@ const Projects = () => {
         </div>
 
         <div className="projects">
-          {projectsData
-            .filter(project => selectedCategory === "all" || project.category === selectedCategory)
-            .map(project => (
-              <Project key={project.title} project={project} />
-            ))}
+          {currentProjects.map(project => (
+            <Project key={project.title} project={project} />
+          ))}
         </div>
+
+        {totalPages > 1 && (
+          <div className="pagination">
+            <button 
+              onClick={(e) => {
+                e.preventDefault();
+                handlePageChange(currentPage - 1);
+              }}
+              disabled={currentPage === 1}
+            >
+              Previous
+            </button>
+            <span>{currentPage} of {totalPages}</span>
+            <button 
+              onClick={(e) => {
+                e.preventDefault();
+                handlePageChange(currentPage + 1);
+              }}
+              disabled={currentPage === totalPages}
+            >
+              Next
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

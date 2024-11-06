@@ -1,5 +1,4 @@
 footer{
-
     background: var(--color-primary);
     padding: 3rem 0;
     text-align: center;
@@ -8,7 +7,6 @@ footer{
 }
 
 footer a{
-
     color: var(--color-bg);
 }
 
@@ -56,23 +54,107 @@ footer a{
 }
 
 .footer__copyright{
-
     margin-bottom: 4rem;
     color: var(--color-bg);
 }
 
-/* Media queries for small devices(Mobiles) */
+.footer__contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 2rem auto;
+  border-radius: 1rem;
+  padding: 2rem;
+  background: var(--color-gray);
+}
 
-@media screen and (max-width: 600px) {
+.footer__contact-form h2 {
+  color: var(--color-white);
+}
 
-    .permalinks{
+.footer__contact-form input,
+.footer__contact-form textarea {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: var(--color-white);
+  border: 2px solid var(--color-primary-variant);
+  resize: none;
+  color: var(--color-white);
+}
 
-        flex-direction: column;
-        gap: 1.5rem;
-    }
+.footer__contact-form textarea {
+  min-height: 150px;
+}
 
-    .footer__socials{
+.footer__contact-form button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+}
 
-        margin-bottom: 2.6rem;
-    }
+.footer__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  padding: 0 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Left column - Contact form */
+.footer__contact-form {
+  flex: 1;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  background: var(--color-gray);
+  border-radius: 1rem;
+}
+
+/* Right column - Logo, links, copyright */
+.footer__right-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  max-width: 500px;
+}
+
+.footer__logo {
+  color: var(--color-bg);
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.permalinks {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer__copyright {
+  color: var(--color-bg);
+}
+
+/* Media queries for smaller screens */
+@media screen and (max-width: 1024px) {
+  .footer__content {
+    flex-direction: column;
+    padding: 0 2rem;
+  }
+
+  .footer__contact-form,
+  .footer__right-column {
+    width: 100%;
+    max-width: 500px;
+  }
 }

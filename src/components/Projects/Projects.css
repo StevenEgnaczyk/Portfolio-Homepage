@@ -1,17 +1,10 @@
-/* PROJECTS SECTION */
+/* GENERAL SECTION STYLING */
 #projects {
     position: relative;
     height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
-}
-
-.projects-container {
-    width: 95%;
-    margin: auto;
-    margin-bottom: 2rem;
 }
 
 #projects h1 {
@@ -20,6 +13,13 @@
     color: var(--color-white);
 }
 
+.projects-container {
+    width: 95%;
+    margin: auto;
+    margin-bottom: 2rem;
+}
+
+/* PROJECT TABS STYLING */
 .project-tabs {
     display: flex;
     flex-wrap: wrap;
@@ -39,6 +39,7 @@
     align-content: center;
 }
 
+/* RADIO BUTTON STYLING */
 [type="radio"]:checked,
 [type="radio"]:not(:checked) {
     position: absolute;
@@ -87,6 +88,7 @@
     width: calc(100% - 24px);
 }
 
+/* CHECKBOX COLOR STYLING */
 .checkbox-all:checked + label:after,
 .checkbox-all:not(:checked) + label:after {
     background-color: hotpink;
@@ -112,11 +114,33 @@
     background-color: purple;
 }
 
+/* PROJECT GRID STYLING */
 .projects {
     display: grid;
-    grid-template-columns: repeat(3, 32%);
-    grid-gap: 1.85%;
-    margin-top: 0.5rem;
+    gap: 0.25rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Desktop (3 columns) */
+@media screen and (min-width: 1201px) {
+    .projects {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Tablet (2 columns) */
+@media screen and (max-width: 1200px) and (min-width: 601px) {
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile (1 column) */
+@media screen and (max-width: 600px) {
+    .projects {
+        grid-template-columns: 1fr;
+    }
 }
 
 .project {
@@ -143,20 +167,29 @@
     background-color: var(--color-gray);
 }
 
+/* PROJECT CONTENT STYLING */
 .project-title {
     font-size: 1.5rem;
     font-weight: bold;
     text-decoration: underline;
 }
 
+.project-description {
+    color: var(--color-white);
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    overflow: scroll;
+}
+
 .project-img {
     width: 100%;
-    height: auto; /* Ensures the images resize dynamically */
+    height: auto;
     margin-top: 0.1rem;
     margin-bottom: 0.25rem;
     object-fit: cover;
 }
 
+/* TAG STYLING */
 .tags-container {
     display: flex;
     overflow: scroll;
@@ -174,93 +207,94 @@
     font-weight: bold;
 }
 
+/* TECHNOLOGY TAG COLORS */
 .python-tag {
-    background-color: #306998; /* Python blue */
+    background-color: #306998;
     color: white;
 }
 
 .flask-tag {
-    background-color: #000000; /* Flask black */
+    background-color: #000000;
     color: white;
 }
 
 .react-tag {
-    background-color: #61dafb; /* React blue */
+    background-color: #61dafb;
     color: black;
 }
 
 .java-tag {
-    background-color: #007396; /* Java blue */
+    background-color: #007396;
     color: white;
 }
 
 .api-tag {
-    background-color: #d9534f; /* Bootstrap danger red */
+    background-color: #d9534f;
     color: white;
 }
 
 .matlab-tag {
-    background-color: #0076a8; /* MATLAB blue */
+    background-color: #0076a8;
     color: white;
 }
 
 .docker-tag {
-    background-color: #0db7ed; /* Docker blue */
+    background-color: #0db7ed;
     color: white;
 }
 
 .tensorflow-tag {
-    background-color: #ff6f00; /* TensorFlow orange */
+    background-color: #ff6f00;
     color: white;
 }
 
 .c\+\+-tag {
-    background-color: #00599c; /* C++ blue */
+    background-color: #00599c;
     color: white;
 }
 
 .html-tag {
-    background-color: #e34c26; /* HTML red */
+    background-color: #e34c26;
     color: white;
 }
 
 .css-tag {
-    background-color: #264de4; /* CSS blue */
+    background-color: #264de4;
     color: white;
 }
 
 .javascript-tag {
-    background-color: #f0db4f; /* JavaScript yellow */
+    background-color: #f0db4f;
     color: black;
 }
 
 .matplotlib-tag {
-    background-color: #11557c; /* Matplotlib blue */
+    background-color: #11557c;
     color: white;
 }
 
 .youtube-tag {
-    background-color: #ff0000; /* YouTube red */
+    background-color: #ff0000;
     color: white;
 }
 
 .vercel-tag {
-    background-color: #763DA9; /* Vercel black */
+    background-color: #763DA9;
     color: white;
 }
 
 .render-tag {
-    background-color: #f24c27; /* Render red */
+    background-color: #f24c27;
     color: white;
 }
 
 .firebase-tag {
-    background-color: #FFCA28; /* Firebase yellow */
+    background-color: #FFCA28;
     color: black;
 }
 
 .firestore-tag {
-    background-color: #FFA611; /* Firestore orange */
+    background-color: #FFA611;
     color: white;
 }
 
@@ -269,6 +303,7 @@
     color: white;
 }
 
+/* SLIDESHOW STYLING */
 .slideshow-container {
     position: relative;
     max-width: 100%;
@@ -309,13 +344,7 @@
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.project-description {
-    color: var(--color-white);
-    margin-top: 0.25rem;
-    margin-bottom: 0.25rem;
-    overflow: scroll;
-}
-
+/* BUTTON STYLING */
 .btn-container {
     gap: 1rem;
     display: flex;  
@@ -337,8 +366,8 @@
     border-color: rgb(163, 163, 163);
 }
 
-.github-btn{
-    width: max-content; /* fit exactly it's content */
+.github-btn {
+    width: max-content;
     display: inline-block;
     color: var(--color-white);
     background: var(--color-github-green);
@@ -349,21 +378,59 @@
     transition: var(--transition);
 }
 
-.github-btn:hover{
+.github-btn:hover {
     background: var(--color-github-gray);
     color: var(--color-white);
     border-color: var(--color-github-green);
 }
 
+/* PAGINATION STYLING */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.pagination button {
+    padding: 0.75rem 1.2rem;
+    border: 3px solid var(--color-white);
+    border-radius: 0.4rem;
+    background: var(--color-primary);
+    color: var(--color-white);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.pagination button:hover:not(:disabled) {
+    border: 3px solid var(--color-primary);
+    color: var(--color-primary);
+    background: var(--color-white);
+}
+
+.pagination button:disabled {
+    background-color: var(--color-gray);
+    border-color: var(--color-gray);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.pagination span {
+    font-size: 1rem;
+    color: var(--color-white);
+    font-weight: 500;
+}
+
+/* MEDIA QUERIES */
 @media screen and (max-width: 1200px) {
     .projects {
         grid-template-columns: repeat(2, 49%);
     }
-    
 }
 
 @media screen and (max-width: 600px) {
-    
     .project-tabs {
         flex-direction: column;
     }
@@ -388,6 +455,19 @@
     .project-img {
         width: 90%;
         margin: 0 auto;
+    }
+
+    .pagination {
+        gap: 1rem;
+    }
+
+    .pagination button {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .pagination span {
+        font-size: 0.9rem;
     }
 }
 
