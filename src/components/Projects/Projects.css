@@ -32,7 +32,7 @@
     cursor: pointer;
     padding: 0.5rem;
     color: var(--color-white);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
     text-align: center;
     flex: 1;
@@ -49,17 +49,12 @@
 [type="radio"]:checked + label,
 [type="radio"]:not(:checked) + label {
     position: relative;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 0 12px;
     letter-spacing: 3px;
-    cursor: pointer;
     line-height: 30px;
-    font-size: 15px;
-    text-transform: uppercase;
     font-weight: 500;
     color: #fff;
-    margin-right: 10px;
-    margin-left: 10px;
+    margin: 0 10px;
     transition: all 0.2s ease;
 }
 
@@ -114,33 +109,24 @@
     background-color: purple;
 }
 
+.checkbox-label:hover {
+    background-color: var(--color-secondary);
+    transition: all 0.2s ease;
+    border-radius: 1rem;
+}
+
+.checkbox-label {
+    font-size: 1.2rem;
+
+}
+
+
 /* PROJECT GRID STYLING */
 .projects {
     display: grid;
     gap: 0.25rem;
     width: 100%;
     margin: 0 auto;
-}
-
-/* Desktop (3 columns) */
-@media screen and (min-width: 1201px) {
-    .projects {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* Tablet (2 columns) */
-@media screen and (max-width: 1200px) and (min-width: 601px) {
-    .projects {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Mobile (1 column) */
-@media screen and (max-width: 600px) {
-    .projects {
-        grid-template-columns: 1fr;
-    }
 }
 
 .project {
@@ -176,16 +162,14 @@
 
 .project-description {
     color: var(--color-white);
-    margin-top: 0.25rem;
-    margin-bottom: 0.25rem;
+    margin: 0.25rem 0;
     overflow: scroll;
 }
 
 .project-img {
     width: 100%;
     height: auto;
-    margin-top: 0.1rem;
-    margin-bottom: 0.25rem;
+    margin: 0.1rem 0 0.25rem;
     object-fit: cover;
 }
 
@@ -194,8 +178,7 @@
     display: flex;
     overflow: scroll;
     justify-content: left;
-    margin-top: 0.75rem;
-    margin-bottom: 0.75rem;
+    margin: 0.75rem 0;
 }
 
 .tag {
@@ -208,100 +191,25 @@
 }
 
 /* TECHNOLOGY TAG COLORS */
-.python-tag {
-    background-color: #306998;
-    color: white;
-}
-
-.flask-tag {
-    background-color: #000000;
-    color: white;
-}
-
-.react-tag {
-    background-color: #61dafb;
-    color: black;
-}
-
-.java-tag {
-    background-color: #007396;
-    color: white;
-}
-
-.api-tag {
-    background-color: #d9534f;
-    color: white;
-}
-
-.matlab-tag {
-    background-color: #0076a8;
-    color: white;
-}
-
-.docker-tag {
-    background-color: #0db7ed;
-    color: white;
-}
-
-.tensorflow-tag {
-    background-color: #ff6f00;
-    color: white;
-}
-
-.c\+\+-tag {
-    background-color: #00599c;
-    color: white;
-}
-
-.html-tag {
-    background-color: #e34c26;
-    color: white;
-}
-
-.css-tag {
-    background-color: #264de4;
-    color: white;
-}
-
-.javascript-tag {
-    background-color: #f0db4f;
-    color: black;
-}
-
-.matplotlib-tag {
-    background-color: #11557c;
-    color: white;
-}
-
-.youtube-tag {
-    background-color: #ff0000;
-    color: white;
-}
-
-.vercel-tag {
-    background-color: #763DA9;
-    color: white;
-}
-
-.render-tag {
-    background-color: #f24c27;
-    color: white;
-}
-
-.firebase-tag {
-    background-color: #FFCA28;
-    color: black;
-}
-
-.firestore-tag {
-    background-color: #FFA611;
-    color: white;
-}
-
-.hackathon-tag {
-    background-color: #00b140;
-    color: white;
-}
+.python-tag { background-color: #306998; color: white; }
+.flask-tag { background-color: #000000; color: white; }
+.react-tag { background-color: #61dafb; color: black; }
+.java-tag { background-color: #007396; color: white; }
+.api-tag { background-color: #d9534f; color: white; }
+.matlab-tag { background-color: #0076a8; color: white; }
+.docker-tag { background-color: #0db7ed; color: white; }
+.tensorflow-tag { background-color: #ff6f00; color: white; }
+.c\+\+-tag { background-color: #00599c; color: white; }
+.html-tag { background-color: #e34c26; color: white; }
+.css-tag { background-color: #264de4; color: white; }
+.javascript-tag { background-color: #f0db4f; color: black; }
+.matplotlib-tag { background-color: #11557c; color: white; }
+.youtube-tag { background-color: #ff0000; color: white; }
+.vercel-tag { background-color: #763DA9; color: white; }
+.render-tag { background-color: #f24c27; color: white; }
+.firebase-tag { background-color: #FFCA28; color: black; }
+.firestore-tag { background-color: #FFA611; color: white; }
+.hackathon-tag { background-color: #00b140; color: white; }
 
 /* SLIDESHOW STYLING */
 .slideshow-container {
@@ -349,21 +257,6 @@
     gap: 1rem;
     display: flex;  
     justify-content: center;
-}
-
-.project-btn {
-    color: black;
-    border-color: rgb(163, 163, 163);
-}
-
-.project-btn-invalid {
-    font-weight: 600;
-    padding: 1rem;
-    width: 8rem;
-    border-radius: 2rem;
-    cursor: not-allowed;
-    color: black;
-    border-color: rgb(163, 163, 163);
 }
 
 .github-btn {
@@ -424,9 +317,15 @@
 }
 
 /* MEDIA QUERIES */
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 1201px) {
     .projects {
-        grid-template-columns: repeat(2, 49%);
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 601px) {
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -436,7 +335,7 @@
     }
 
     .projects {
-        grid-template-columns: 100%;
+        grid-template-columns: 1fr;
         grid-gap: 1rem;
     }
     
@@ -482,7 +381,7 @@
     }
     
     .projects {
-        grid-template-columns: 100%;
+        grid-template-columns: 1fr;
         grid-gap: 1rem;
     }
 

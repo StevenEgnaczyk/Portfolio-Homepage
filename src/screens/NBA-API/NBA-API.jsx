@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
-import './NBA-API.css'; // Import the CSS file
-import PlaceHolder_Image from '../../assets/Projects/NBA API/placeholder.png'; // Import the placeholder image
+import { useNavigate } from 'react-router-dom';
+import './NBA-API.css';
+import PlaceHolder_Image from '../../assets/Projects/NBA API/placeholder.png';
+
 const NBA_API = () => {
+  const navigate = useNavigate();
   const [team, setTeam] = useState('Dallas Mavericks');
   const [stat1, setStat1] = useState('Rebounds');
   const [stat2, setStat2] = useState('Rebounds');
-  const [imageSrc, setImageSrc] = useState(PlaceHolder_Image); // Default placeholder image
-  const [loading, setLoading] = useState(false); // Track loading state
-  const [progress, setProgress] = useState(0); // Track progress for progress bar
+  const [imageSrc, setImageSrc] = useState(PlaceHolder_Image);
+  const [loading, setLoading] = useState(false);
+  const [progress, setProgress] = useState(0);
 
-  // Replace with your Render endpoint URL
   const API_URL = 'https://nba-statistics-visualizer.onrender.com/submit';
 
   const handleSubmit = () => {
     setLoading(true);
-    setProgress(0); // Reset progress
+    setProgress(0);
     fetch(API_URL, {
       method: 'POST',
       headers: {
@@ -35,12 +37,12 @@ const NBA_API = () => {
       .then(blob => {
         const url = URL.createObjectURL(blob);
         setImageSrc(url);
-        setLoading(false); // Remove loading state
+        setLoading(false);
       })
       .catch(error => {
         console.error('Error:', error);
         alert('An error occurred: ' + error.message);
-        setLoading(false); // Ensure loading state is removed on error
+        setLoading(false);
       });
   };
 
@@ -63,7 +65,7 @@ const NBA_API = () => {
               value={team}
               onChange={(e) => setTeam(e.target.value)}
             >
-              <option value="Atlanta Hawks">Atlanta Hawks</option>
+                            <option value="Atlanta Hawks">Atlanta Hawks</option>
               <option value="Boston Celtics">Boston Celtics</option>
               <option value="Brooklyn Nets">Brooklyn Nets</option>
               <option value="Charlotte Hornets">Charlotte Hornets</option>
@@ -155,22 +157,32 @@ const NBA_API = () => {
           </div>
         </div>
         
-        {/* Conditionally render the progress bar or image */}
-        {loading ? (
-          <div className="nba-api-progress-container">
-            <div className="nba-api-progress-bar" style={{ width: `${progress}%` }}></div>
-          </div>
-        ) : (
-          <img src={imageSrc} alt="Visualization" className="nba-api-placeholder-image" />
-        )}
+        <div className="nba-api-image-container">
+          {loading ? (
+            <div className="nba-api-loading-container">
+              <span>Loading...</span>
+              <div className="nba-api-spinner"></div>
+            </div>
+          ) : (
+            <img src={imageSrc} alt="Visualization" className="nba-api-placeholder-image" />
+          )}
+        </div>
 
-        <button
-          className="nba-api-submit-btn"
-          onClick={handleSubmit}
-          disabled={loading} // Disable button during loading
-        >
-          Submit
-        </button>
+        <div className="nba-api-button-container">
+          <button
+            className="nba-api-submit-btn"
+            onClick={handleSubmit}
+            disabled={loading}
+          >
+            Submit
+          </button>
+          <button
+            className="nba-api-submit-btn"
+            onClick={() => navigate('/')}
+          >
+            Home
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -101,7 +101,8 @@ const projectsData = [
     githubLink: "https://github.com/StevenEgnaczyk/DatabaseD",
     demoLink: "",
     dates: { start: new Date(2024, 9), end: new Date(2024, 9) }
-  }, {
+  },
+  {
     title: "LockedIn",
     category: "software-development",
     description: "LinkedIn network visualization tool that allows users to explore their connections using react force graph.",
@@ -112,13 +113,12 @@ const projectsData = [
       require("../../assets/Projects/LockedIn/LockedIn-3.png"),
     ],
     githubLink: "https://github.com/StevenEgnaczyk/LockedIn",
-    demoLink: "",
+    demoLink: "/locked-in",
     dates: { start: new Date(2024, 9), end: new Date(2024, 9) }
   },
 ];
 
 projectsData.sort((a, b) => b.dates.end - a.dates.end);
-
 
 const Project = ({ project }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -208,7 +208,6 @@ const Projects = () => {
   const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
 
   const handlePageChange = (newPage) => {
-    event.preventDefault();
     setCurrentPage(newPage);
   };
 

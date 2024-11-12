@@ -39,7 +39,7 @@ const FocusGraph = forwardRef(({ nodeClick }, props, ref) => {
   useEffect(() => {
     // Only fetch data if graphData is not available
     if (!graphData) {
-      fetch('./miserables.json')
+      fetch('./graphDataTemp.json')
         .then((res) => res.json())
         .then((data) => {
           setGraphData(data); // Set the fetched data to context
@@ -58,9 +58,9 @@ const FocusGraph = forwardRef(({ nodeClick }, props, ref) => {
       <ForceGraph3D
         ref={fgRef}
         graphData={graphData}
-        nodeId="id"
-        nodeAutoColorBy="group"
-        nodeLabel="id"
+        nodeId={node => node.name}
+        nodeAutoColorBy={node => graphData.links.filter(link => link.source === node.id || link.target === node.id).length} // Color nodes by number of connections
+        nodeLabel="name"
         showNavInfo={false}
         nodeOpacity={1}
         enableNodeDrag={false}
