@@ -1,6 +1,6 @@
 import React from 'react';
 import './about.css';
-import profilePicture from '../../assets/CompositePhoto.jpg';
+import profilePicture from '../../assets/professional-headshot.jpg';
 import { FaGraduationCap } from "react-icons/fa";
 import { TfiWorld } from 'react-icons/tfi';
 
