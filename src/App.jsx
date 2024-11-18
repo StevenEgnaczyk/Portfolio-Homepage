@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Analytics } from "@vercel/analytics/react";
-import { ReactGA } from 'react-ga4';
+import ReactGA from 'react-ga4';
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import HomePage from './screens/HomePage.jsx';
 import NBA_API from './screens/NBA-API/NBA-API';
