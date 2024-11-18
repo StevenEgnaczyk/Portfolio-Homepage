@@ -1,18 +1,15 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Analytics } from "@vercel/analytics/react";
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import ReactGA from 'react-ga4';
-import { SpeedInsights } from "@vercel/speed-insights/react";
 import HomePage from './screens/HomePage.jsx';
 import NBA_API from './screens/NBA-API/NBA-API';
 import LockedIn from './screens/LockedIn/LockedIn.jsx';
-import { GraphDataProvider } from './screens/LockedIn/GraphDataContext'; // Import your GraphDataProvider
+import { GraphDataProvider } from './screens/LockedIn/GraphDataContext';
 
-function App() {
+function AnalyticsAndAPI() {
+  const location = useLocation();
+
   useEffect(() => {
-
-    const location = useLocation();
-
     // Initialize Google Analytics
     ReactGA.initialize('G-62M60FY37N');
     ReactGA.send({ hitType: 'pageview', page: location.pathname, title: document.title });
@@ -36,12 +33,15 @@ function App() {
       });
   }, [location]);
 
+  return null; // This component doesn't render anything
+}
+
+function App() {
   return (
     <div className="App">
-      <Analytics />
-      <SpeedInsights />
-      <GraphDataProvider> {/* Wrap your routes with the provider */}
+      <GraphDataProvider>
         <Router>
+          <AnalyticsAndAPI />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/nba-api" element={<NBA_API />} />
