@@ -86,7 +86,7 @@ const projectsData = [
     ],
     githubLink: "https://github.com/StevenEgnaczyk/Portfolio-Homepage",
     demoLink: "https://www.stevenegg.com",
-    dates: { start: new Date(2024, 7), end: new Date(2024, 9) }
+    dates: { start: new Date(2024, 7), end: "Present" }
   },
   {
     title: "DataBaseD",
@@ -100,7 +100,7 @@ const projectsData = [
     ],
     githubLink: "https://github.com/StevenEgnaczyk/DatabaseD",
     demoLink: "",
-    dates: { start: new Date(2024, 9), end: new Date(2024, 9) }
+    dates: { start: new Date(2024, 9), end: "Present" }
   },
   {
     title: "LockedIn",
@@ -113,12 +113,31 @@ const projectsData = [
       require("../../assets/Projects/LockedIn/LockedIn-3.png"),
     ],
     githubLink: "https://github.com/StevenEgnaczyk/LockedIn",
-    demoLink: "/locked-in",
+    // demoLink: "/locked-in",
     dates: { start: new Date(2024, 9), end: new Date(2024, 9) }
   },
+  { 
+    title: "Infinigrams",
+    category: "software-development",
+    description: "Web application that allows users to create and play infinite grid-based puzzles",
+    tags: ["React", "Tailwind CSS", "Vite"],
+    images: [
+      require("../../assets/Projects/Infinigrams/Infinigrams_1.png"),
+      require("../../assets/Projects/Infinigrams/Infinigrams_2.png"),
+      require("../../assets/Projects/Infinigrams/Infinigrams_3.png"),
+      require("../../assets/Projects/Infinigrams/Infinigrams_4.png"),
+    ],
+    githubLink: "https://github.com/StevenEgnaczyk/infinigrams",
+    demoLink: "https://stevenegnaczyk.github.io/infinigrams",
+    dates: { start: new Date(2025, 1), end: "Present" }
+  }
 ];
 
-projectsData.sort((a, b) => b.dates.end - a.dates.end);
+projectsData.sort((a, b) => {
+  if (a.dates.end === "Present") return -1;
+  if (b.dates.end === "Present") return 1;
+  return b.dates.end - a.dates.end;
+});
 
 const Project = ({ project }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -132,6 +151,7 @@ const Project = ({ project }) => {
   };
 
   const formatDate = (date) => {
+    if (date === "Present") return "Present";
     return date instanceof Date && !isNaN(date)
       ? `${date.toLocaleString("default", { month: "short" })} ${date.getFullYear()}`
       : "Present";

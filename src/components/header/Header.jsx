@@ -8,7 +8,7 @@ const socialLinks = [
   { icon: <FaGithub />, link: 'https://github.com/StevenEgnaczyk', label: 'Github' },
   { icon: <FaLinkedin />, link: 'https://www.linkedin.com/in/steven-egnaczyk-949a71208/', label: 'LinkedIn' },
   { icon: <FaYoutube />, link: 'https://www.youtube.com/channel/UCmWDlvMYYEbW42B8JyxFBcA', label: 'YouTube' },
-  { icon: <FaLaptopCode />, link: '/nba-api', label: 'Recent Project' },
+  { icon: <FaLaptopCode />, link: 'https://stevenegnaczyk.github.io/infinigrams', label: 'Recent Project' },
 ]
 
 const Header = () => {

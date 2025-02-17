@@ -140,7 +140,9 @@
 
 .project.show {
     text-align: center;
-    display: inline;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     border: 0.1rem solid var(--text-dark);
     opacity: 1;
     margin-top: 0.5rem;
@@ -210,6 +212,8 @@
 .firebase-tag { background-color: #FFCA28; color: black; }
 .firestore-tag { background-color: #FFA611; color: white; }
 .hackathon-tag { background-color: #00b140; color: white; }
+.tailwind-css-tag { background-color: #38bdf8; color: white; }
+.vite-tag { background-color: #64e1fe; color: white; }
 
 /* SLIDESHOW STYLING */
 .slideshow-container {
@@ -257,6 +261,8 @@
     gap: 1rem;
     display: flex;  
     justify-content: center;
+    margin-top: auto;
+    padding-top: 1rem;
 }
 
 .github-btn {
