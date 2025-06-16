@@ -14,9 +14,10 @@
 }
 
 .projects-container {
-    width: 95%;
-    margin: auto;
+    width: 95vw;
+    margin: 0 auto;
     margin-bottom: 2rem;
+    box-sizing: border-box;
 }
 
 /* PROJECT TABS STYLING */
@@ -124,18 +125,16 @@
 /* PROJECT GRID STYLING */
 .projects {
     display: grid;
-    gap: 0.25rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
     width: 100%;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .project {
-    opacity: 0;
-    transform: scale(0);
-    padding: 0;
-    margin: 0;
-    display: none;
-    border-width: 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .project.show {
@@ -185,10 +184,10 @@
 
 .tag {
     display: inline-block;
-    padding: 5px 10px;
-    margin: 0 5px;
+    padding: 7px 16px;
+    margin: 0 8px;
     border-radius: 15px;
-    font-size: 12px;
+    font-size: 1rem;
     font-weight: bold;
 }
 
@@ -258,11 +257,27 @@
 
 /* BUTTON STYLING */
 .btn-container {
+    display: flex;
     gap: 1rem;
-    display: flex;  
     justify-content: center;
     margin-top: auto;
     padding-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-container .btn, .btn-container .github-btn {
+    width: 48%;
+    min-width: 100px;
+    max-width: 160px;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.5rem 0;
+    border-radius: 1.2rem;
+    margin: 0.25rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .github-btn {
@@ -323,13 +338,7 @@
 }
 
 /* MEDIA QUERIES */
-@media screen and (min-width: 1201px) {
-    .projects {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media screen and (max-width: 1200px) and (min-width: 601px) {
+@media screen and (max-width: 1200px) {
     .projects {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -342,7 +351,7 @@
 
     .projects {
         grid-template-columns: 1fr;
-        grid-gap: 1rem;
+        gap: 1rem;
     }
     
     .project-tabs label {
@@ -373,6 +382,13 @@
 
     .pagination span {
         font-size: 0.9rem;
+    }
+
+    .btn-container .btn, .btn-container .github-btn {
+        width: 100%;
+        max-width: 100%;
+        font-size: 1.1rem;
+        padding: 1rem 0;
     }
 }
 

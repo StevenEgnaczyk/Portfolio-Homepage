@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useNavigation } from '@react-navigation/native';
 import "./Projects.css";
 
 const projectsData = [
@@ -113,7 +112,6 @@ const projectsData = [
       require("../../assets/Projects/LockedIn/LockedIn-3.png"),
     ],
     githubLink: "https://github.com/StevenEgnaczyk/LockedIn",
-    // demoLink: "/locked-in",
     dates: { start: new Date(2024, 9), end: new Date(2024, 9) }
   },
   { 
@@ -170,7 +168,7 @@ const Project = ({ project }) => {
       </div>
       <div className="slideshow-container">
         <div className="mySlides fade">
-          <img src={project.images[currentSlide]} alt={project.title} className="project-img" />
+          <img src={project.images[currentSlide]} alt={project.title} className="project-img" onError={e => e.target.style.display='none'} />
         </div>
         <a className="prev" onClick={prevSlide}>&#10094;</a>
         <a className="next" onClick={nextSlide}>&#10095;</a>
@@ -178,14 +176,20 @@ const Project = ({ project }) => {
       <p className="project-description">{project.description}</p>
       <div className="btn-container">
         {project.githubLink && (
-          <button className="btn github-btn" onClick={() => window.location.href = project.githubLink}>
+          <a className="btn github-btn" href={project.githubLink} target="_blank" rel="noopener noreferrer">
             GitHub
-          </button>
+          </a>
         )}
         {project.demoLink && (
-          <button className="btn btn-primary" onClick={() => navigation.navigate(project.demoLink)}>
-            Live Demo
-          </button>
+          project.demoLink.startsWith('http') ? (
+            <a className="btn btn-primary" href={project.demoLink} target="_blank" rel="noopener noreferrer">
+              Live Demo
+            </a>
+          ) : (
+            <a className="btn btn-primary" href={project.demoLink}>
+              Live Demo
+            </a>
+          )
         )}
       </div>
     </div>
@@ -200,11 +204,11 @@ const Projects = () => {
   useEffect(() => {
     const updateProjectsPerPage = () => {
       if (window.innerWidth > 1200) {
-        setProjectsPerPage(6); // 3 columns × 2 rows
+        setProjectsPerPage(6);
       } else if (window.innerWidth > 600) {
-        setProjectsPerPage(4); // 2 columns × 2 rows
+        setProjectsPerPage(4);
       } else {
-        setProjectsPerPage(2); // 1 column × 2 rows
+        setProjectsPerPage(2);
       }
     };
 

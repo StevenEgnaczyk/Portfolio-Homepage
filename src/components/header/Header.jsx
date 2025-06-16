@@ -16,7 +16,7 @@ const Header = () => {
     <header id='home'>
       <div className="container header__container">
         <h1>Steven Egnaczyk</h1>
-        <h2>Computer Science Graduate Student</h2>
+        <h2>Business Data Analyst</h2>
         <ContactButtons />
         <div className="icon-bubble-container">
           <div className="professional-headshot">

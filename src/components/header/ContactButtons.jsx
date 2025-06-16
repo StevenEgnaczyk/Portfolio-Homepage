@@ -23,7 +23,7 @@ const ContactButtons = () => {
       </a>
       
       <div className="contact-dropdown">
-        <button className="btn socials-btn">Social Links</button>
+        <button className="btn btn-tertiary">Social Links</button>
         <ul className="dropdown-menu">
           {socialLinks.map((social, index) => (
             <li key={index}>
