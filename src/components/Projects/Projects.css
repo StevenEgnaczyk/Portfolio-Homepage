@@ -14,10 +14,9 @@
 }
 
 .projects-container {
-    width: 95vw;
-    margin: 0 auto;
+    width: 95%;
+    margin: auto;
     margin-bottom: 2rem;
-    box-sizing: border-box;
 }
 
 /* PROJECT TABS STYLING */
@@ -111,30 +110,30 @@
 }
 
 .checkbox-label:hover {
-    background-color: var(--color-secondary);
+    background-color: #4a9fd9;
     transition: all 0.2s ease;
-    border-radius: 1rem;
 }
 
 .checkbox-label {
     font-size: 1.2rem;
-
 }
 
 
 /* PROJECT GRID STYLING */
 .projects {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    gap: 0.25rem;
     width: 100%;
     margin: 0 auto;
-    box-sizing: border-box;
 }
 
 .project {
-    width: 100%;
-    box-sizing: border-box;
+    opacity: 0;
+    transform: scale(0);
+    padding: 0;
+    margin: 0;
+    display: none;
+    border-width: 0;
 }
 
 .project.show {
@@ -143,22 +142,31 @@
     flex-direction: column;
     justify-content: space-between;
     border: 0.1rem solid var(--text-dark);
+    background-color: var(--color-gray);
     opacity: 1;
     margin-top: 0.5rem;
     visibility: visible;
     transform: scale(1);
-    border-width: 2px;
     margin-right: 0.1rem;
-    padding: 0.5rem;
-    border-radius: 1rem;
-    background-color: var(--color-gray);
+    padding: 0.5rem 0.5rem 2rem 0.5rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 6px 20px rgba(0,0,0,0.1);
+    border-width: 2px;
 }
 
-/* PROJECT CONTENT STYLING */
+.project-img {
+    width: 100%;
+    height: auto;
+    margin: 0.1rem 0 0.25rem;
+    object-fit: cover;
+    border: 2px solid white;
+    border-radius: 4px;
+}
+
 .project-title {
     font-size: 1.5rem;
     font-weight: bold;
-    text-decoration: underline;
+    font-family: inherit;
 }
 
 .project-description {
@@ -167,14 +175,12 @@
     overflow: scroll;
 }
 
-.project-img {
-    width: 100%;
-    height: auto;
-    margin: 0.1rem 0 0.25rem;
-    object-fit: cover;
+.project-dates {
+    color: var(--color-white);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
 }
 
-/* TAG STYLING */
 .tags-container {
     display: flex;
     overflow: scroll;
@@ -184,35 +190,65 @@
 
 .tag {
     display: inline-block;
-    padding: 7px 16px;
-    margin: 0 8px;
+    padding: 6px 12px;
+    margin: 0 5px;
     border-radius: 15px;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: bold;
 }
-
 /* TECHNOLOGY TAG COLORS */
-.python-tag { background-color: #306998; color: white; }
-.flask-tag { background-color: #000000; color: white; }
-.react-tag { background-color: #61dafb; color: black; }
-.java-tag { background-color: #007396; color: white; }
-.api-tag { background-color: #d9534f; color: white; }
-.matlab-tag { background-color: #0076a8; color: white; }
-.docker-tag { background-color: #0db7ed; color: white; }
-.tensorflow-tag { background-color: #ff6f00; color: white; }
-.c\+\+-tag { background-color: #00599c; color: white; }
-.html-tag { background-color: #e34c26; color: white; }
-.css-tag { background-color: #264de4; color: white; }
-.javascript-tag { background-color: #f0db4f; color: black; }
-.matplotlib-tag { background-color: #11557c; color: white; }
-.youtube-tag { background-color: #ff0000; color: white; }
-.vercel-tag { background-color: #763DA9; color: white; }
-.render-tag { background-color: #f24c27; color: white; }
-.firebase-tag { background-color: #FFCA28; color: black; }
-.firestore-tag { background-color: #FFA611; color: white; }
-.hackathon-tag { background-color: #00b140; color: white; }
-.tailwind-css-tag { background-color: #38bdf8; color: white; }
-.vite-tag { background-color: #64e1fe; color: white; }
+/* --- core languages & frameworks --- */
+.python-tag          { background-color: #306998; color: #fff; }    /* Python */
+.flask-tag           { background-color: #000000; color: #fff; }    /* Flask */
+.react-tag           { background-color: #61dafb; color: #000; }    /* React */
+.java-tag            { background-color: #007396; color: #fff; }    /* Java */
+.javascript-tag      { background-color: #f0db4f; color: #000; }    /* JavaScript */
+.c\+\+-tag           { background-color: #00599c; color: #fff; }    /* C++ */
+.html-tag            { background-color: #e34c26; color: #fff; }    /* HTML */
+.css-tag             { background-color: #264de4; color: #fff; }    /* CSS */
+.junit-tag           { background-color: #25A16F; color: #fff; }    /* JUnit */
+.shell-tag           { background-color: #4eaa25; color: #fff; }    /* Bash green :contentReference[oaicite:0]{index=0} */
+.jenkins-tag         { background-color: #d24939; color: #fff; }    /* Jenkins */
+.jira-tag            { background-color: #0052cc; color: #fff; }    /* Jira */
+.github-tag          { background-color: #24292e; color: #fff; }    /* GitHub */
+.figma-tag           { background-color: #F24E1E; color: #fff; }    /* Figma */
+.node-js-tag         { background-color: #339933; color: #fff; }    /* Node.js */
+.postgresql-tag      { background-color: #336791; color: #fff; }    /* PostgreSQL */
+.sql-tag             { background-color: #000000; color: #fff; }    /* generic SQL */
+
+/* --- data / ML stack --- */
+.pandas-tag          { background-color: #150458; color: #fff; }    /* Pandas */
+.scikit-learn-tag    { background-color: #F7931E; color: #fff; }    /* scikit-learn */
+.tensorflow-tag      { background-color: #ff6f00; color: #fff; }    /* TensorFlow */
+.machine-learning-tag{ background-color: #4B0082; color: #fff; }    /* ML purple */
+.data-analysis-tag   { background-color: #2E8B57; color: #fff; }    /* Analysis green */
+.data-visualization-tag{ background-color: #CD853F; color: #fff; }  /* Viz brown */
+
+/* --- devops / hosting --- */
+.docker-tag          { background-color: #0db7ed; color: #fff; }    /* Docker */
+.vercel-tag          { background-color: #000000; color: #fff; }    /* Vercel */
+.render-tag          { background-color: #46e3b7; color: #000; }    /* Render */
+.firebase-tag        { background-color: #FFCA28; color: #000; }    /* Firebase */
+.firestore-tag       { background-color: #FFA611; color: #fff; }    /* Firestore */
+.vite-tag            { background-color: #646cff; color: #fff; }    /* Vite */
+
+/* --- misc tech & events --- */
+.api-tag             { background-color: #d9534f; color: #fff; }    /* API generic */
+.matlab-tag          { background-color: #e37222; color: #fff; }    /* MATLAB */
+.matplotlib-tag      { background-color: #11557c; color: #fff; }    /* Matplotlib */
+.youtube-tag         { background-color: #ff0000; color: #fff; }    /* YouTube */
+.hackathon-tag       { background-color: #00b140; color: #fff; }    /* Hackathon */
+.tailwind-css-tag    { background-color: #38bdf8; color: #fff; }    /* Tailwind */
+.amazon-sagemaker-tag{ background-color: #FF9900; color: #000; }    /* SageMaker */
+
+/* --- BI & product-analytics tools --- */
+.mode-tag            { background-color: #003e2f; color: #fff; }    /* Mode dark-green  */
+.hex-tag             { background-color: #00b26b; color: #fff; }    /* Hex bright-green :contentReference[oaicite:2]{index=2} */
+.mixpanel-tag        { background-color: #a086d3; color: #fff; }    /* Mixpanel lilac :contentReference[oaicite:3]{index=3} */
+.front-tag           { background-color: #5b1f76; color: #fff; }    /* Front purple :contentReference[oaicite:4]{index=4} */
+.asana-tag           { background-color: #fc636b; color: #fff; }    /* Asana watermelon :contentReference[oaicite:5]{index=5} */
+.growthbook-tag      { background-color: #0074d9; color: #fff; }    /* GrowthBook blue  */
+
 
 /* SLIDESHOW STYLING */
 .slideshow-container {
@@ -257,37 +293,25 @@
 
 /* BUTTON STYLING */
 .btn-container {
-    display: flex;
     gap: 1rem;
+    display: flex;  
     justify-content: center;
     margin-top: auto;
     padding-top: 1rem;
-    flex-wrap: wrap;
 }
 
-.btn-container .btn, .btn-container .github-btn {
-    width: 48%;
-    min-width: 100px;
+.btn-container .btn, .github-btn, .demo-btn {
     max-width: 160px;
     font-size: 1rem;
-    font-weight: 600;
-    padding: 0.5rem 0;
-    border-radius: 1.2rem;
-    margin: 0.25rem auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.8rem;
+    display: inline-block;
 }
 
 .github-btn {
-    width: max-content;
-    display: inline-block;
+    width: auto;
     color: var(--color-white);
     background: var(--color-github-green);
-    padding: 0.75rem 1.2rem;
-    border-radius: 0.4rem;
-    cursor: pointer;
     border: 1px solid var(--color-github-gray);
     transition: var(--transition);
 }
@@ -296,6 +320,12 @@
     background: var(--color-github-gray);
     color: var(--color-white);
     border-color: var(--color-github-green);
+}
+
+.demo-btn {
+    width: auto;
+    color: var(--color-white);
+    background: var(--color-primary);
 }
 
 /* PAGINATION STYLING */
@@ -338,7 +368,13 @@
 }
 
 /* MEDIA QUERIES */
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 1201px) {
+    .projects {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 601px) {
     .projects {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -351,7 +387,7 @@
 
     .projects {
         grid-template-columns: 1fr;
-        gap: 1rem;
+        grid-gap: 1rem;
     }
     
     .project-tabs label {
@@ -382,13 +418,6 @@
 
     .pagination span {
         font-size: 0.9rem;
-    }
-
-    .btn-container .btn, .btn-container .github-btn {
-        width: 100%;
-        max-width: 100%;
-        font-size: 1.1rem;
-        padding: 1rem 0;
     }
 }
 

@@ -34,7 +34,7 @@ const About = () => {
               <h2>Education</h2>
               <b>
                 <h5>BS in Computer Science (2020-2024)<br /><i>The Ohio State University</i></h5>
-                <h5>MS in Computer Science (2024-2025 Expected)<br /><i>The Ohio State University</i></h5>
+                <h5>MS in Computer Science (2024-2025)<br /><i>The Ohio State University</i></h5>
               </b>
             </article>
 
@@ -44,8 +44,8 @@ const About = () => {
               <b>
                 <h5>Optum (Summer 2022) - Software Engineering Intern</h5>
                 <h5>Ab Initio (Summer 2023) - Software Engineering Intern</h5>
-                <h5>Vanguard (Autumn 2023 : Present) - Data Scientist</h5>
-                <h5>The Ohio State University (Spring 2024 : Present) - Graduate Teaching Associate</h5>
+                <h5>Vanguard (Autumn 2023 - Spring 2025) - Data Analyst</h5>
+                <h5>The Ohio State University (Spring 2024 : S) - Graduate Teaching Associate</h5>
               </b>
             </article>
           </div>

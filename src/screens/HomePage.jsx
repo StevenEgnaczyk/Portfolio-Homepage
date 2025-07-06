@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from '../components/header/Header'
-import About from '../components/about/About'
 import Projects from '../components/Projects/Projects'
+import Experience from '../components/experience/Experience'
 import Footer from '../components/footer/Footer'
 
 const HomePage = () => {
@@ -9,7 +9,7 @@ const HomePage = () => {
     <>
         <Header/>
         <Projects/>
-        <About/>
+        <Experience/>
         <Footer/>
     </>
   )

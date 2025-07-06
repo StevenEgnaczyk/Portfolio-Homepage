@@ -16,8 +16,10 @@
 :root{
 
     --color-bg: #020402;
+    --color-bg-variant: #1a1a1a;
     --color-gray: #4d4d4d;
     --color-primary: #2081c3; /* Steel Blue */
+    --color-primary-variant: #4a90e2;
     --color-secondary: #5c5c5c; /* Light Steel Blue */
     --color-tertiary: #6666E1; /* Light Steel Blue */
     --color-black: #000;
@@ -74,7 +76,6 @@ h1, h2, h3, h4, h5{
 
 h1{
     font-size: 3.5rem;
-    text-decoration: underline;
 }
 
 section > h2, section > h5{

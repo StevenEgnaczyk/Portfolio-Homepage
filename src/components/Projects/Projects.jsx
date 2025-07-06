@@ -182,11 +182,11 @@ const Project = ({ project }) => {
         )}
         {project.demoLink && (
           project.demoLink.startsWith('http') ? (
-            <a className="btn btn-primary" href={project.demoLink} target="_blank" rel="noopener noreferrer">
+            <a className="btn demo-btn" href={project.demoLink} target="_blank" rel="noopener noreferrer">
               Live Demo
             </a>
           ) : (
-            <a className="btn btn-primary" href={project.demoLink}>
+            <a className="btn demo-btn" href={project.demoLink}>
               Live Demo
             </a>
           )
