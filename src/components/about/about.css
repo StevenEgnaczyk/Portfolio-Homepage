@@ -1,117 +1,120 @@
-/* About Section General Styling */
-#about {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.about {
+  border-top: 1px solid var(--line);
 }
 
-#about h1 {
-    text-align: center;
+.about__layout {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: start;
 }
 
-/* About Container (Main Grid) */
-.about__container {
-    display: grid;
-    grid-template-columns: 30% 65%;
-    gap: 5%;
-    align-items: center;
+.about__copy {
+  color: var(--ink-muted);
+  font-size: 1.08rem;
+  max-width: 36rem;
+  margin-bottom: 1.1rem;
 }
 
-/* Image Section Styling */
-.about__me {
-    width: 100%;
-    display: grid;
-    border-radius: 2rem;
+.about__copy--secondary {
+  margin-bottom: 0;
+  color: color-mix(in srgb, var(--ink-muted) 70%, var(--ink-faint));
 }
 
-.about__me-image {
-    border-radius: 2rem;
-    overflow: hidden;
+.about__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 2.4rem;
 }
 
-/* Content Section Styling */
-.about__content p {
-    margin: 2rem 0 2.6rem;
-    color: var(--color-light);
+.about__meta-block h3 {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
 }
 
-/* Cards Grid */
-.about__cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+.about__meta-block ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-/* Individual Card Styling */
-.about__card {
-    background: var(--color-bg-variant);
-    border: 2px solid var(--color-white);
-    border-radius: 1rem;
-    padding: 0.6rem;
-    text-align: center;
-    transition: var(--transition);
+.about__meta-block li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
 }
 
-/* Hover Effect on Cards */
-.about__card:hover {
-    background: transparent;
-    border: 2px solid var(--color-primary);
-    cursor: default;
+.about__meta-block li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
-/* Icons inside Cards */
-.about__icon {
-    color: var(--color-primary);
-    font-size: 3rem;
+.about__education li {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.85rem;
 }
 
-/* Text inside Cards */
-.about__card h5 {
-    font-size: 0.95rem;
+.about__edu-logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  flex-shrink: 0;
+  object-fit: contain;
+  border-radius: var(--radius);
+  background: var(--paper-elevated);
+  border: 1px solid var(--line);
+  padding: 0.2rem;
 }
 
-/* Media Queries for Medium Devices (Tablets) */
-@media screen and (max-width: 1024px) {
-    .about__container {
-        grid-template-columns: 1fr;
-        gap: 0;
-    }
-
-    .about__me {
-        width: 50%;
-        margin: 2rem auto 4rem;
-    }
-
-    .about__content p {
-        margin: 1rem 0 1.5rem;
-    }
+.about__edu-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
 }
 
-/* Media Queries for Small Devices (Mobiles) */
-@media screen and (max-width: 600px) {
-    .about__me {
-        width: 65%;
-        margin: 0.25rem auto 0.25rem;
-    }
+.about__meta-block strong {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+}
 
-    .about__cards {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
+.about__meta-block span {
+  font-size: 0.92rem;
+  color: var(--ink-muted);
+}
 
-    .about__content {
-        text-align: center;
-    }
+.about__focus {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem !important;
+}
 
-    .about__content p {
-        margin: 1.5rem 0;
-    }
+.about__focus li {
+  border: 1px solid var(--line) !important;
+  border-radius: var(--radius);
+  padding: 0.7rem 0.85rem !important;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--ink);
+  background: var(--surface-card);
+}
 
-    .about__container p {
-        font-size: 0.75rem;
-    }
+@media screen and (max-width: 900px) {
+  .about__layout {
+    grid-template-columns: 1fr;
+  }
 
-    .about__card h5 {
-        font-size: 0.7rem;
-    }
+  .about__meta {
+    padding-top: 0;
+  }
 }

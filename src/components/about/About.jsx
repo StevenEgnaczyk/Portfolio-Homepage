@@ -1,58 +1,68 @@
-import React from 'react';
-import './about.css';
-import profilePicture from '../../assets/professional-headshot.jpg';
-import { FaGraduationCap } from "react-icons/fa";
-import { TfiWorld } from 'react-icons/tfi';
+import React from 'react'
+import ohioStateLogo from '../../assets/Logos/OhioState.png'
+import './about.css'
 
 const About = () => {
   return (
-    <section id='about'>
-      <h1>About Me</h1>
-      <div className="sm-container about__container">
-
-        {/* Image Section */}
-        <div className="about__me">
-          <div className="about__me-image">
-            <img src={profilePicture} alt="Picture of Myself" />
-          </div>
+    <section id="about" className="about">
+      <div className="container about__layout">
+        <div className="about__intro">
+          <p className="section-label">about</p>
+          <h2 className="section-heading">Helping build out core product at Insurify</h2>
+          <p className="about__copy">
+            Currently, I'm an Associate Product Manager at Insurify in Boston, working
+            closely with engineering across agency and carrier products. 
+            I help define what to build next by working with stakeholders, running experiments,
+            and translating insights into clear product priorities.
+          </p>
+          <p className="about__copy about__copy--secondary">
+            Before that I was a Data Analyst at Vanguard and taught computer science
+            at The Ohio State University while finishing my MS. Outside of work I build
+            side projects and used to publish CS lectures on YouTube as NullPointerException.
+          </p>
         </div>
 
-        {/* Content Section */}
-        <div className="about__content">
-          <p>
-            Currently, I am a Graduate Student at The Ohio State University pursuing a Master's in Computer Science and Engineering.
-            I am extremely passionate about the growing field of artificial intelligence and machine learning - and its implications on the field
-            of Computer Science. In addition to being a full-time student, I work as both a data science contractor at Vanguard and a 
-            Graduate Teaching Associate at The Ohio State University. My previous software engineering experience, combined with current work on 
-            AI/ML, gives me a unique perspective on the field of Computer Science. I am always looking for new opportunities to learn and grow in the field.
-          </p>
-
-          {/* Cards Section */}
-          <div className="about__cards">
-            <article className='about__card'>
-              <FaGraduationCap className='about__icon' />
-              <h2>Education</h2>
-              <b>
-                <h5>BS in Computer Science (2020-2024)<br /><i>The Ohio State University</i></h5>
-                <h5>MS in Computer Science (2024-2025)<br /><i>The Ohio State University</i></h5>
-              </b>
-            </article>
-
-            <article className='about__card'>
-              <TfiWorld className='about__icon' />
-              <h2>Previous Experience</h2>
-              <b>
-                <h5>Optum (Summer 2022) - Software Engineering Intern</h5>
-                <h5>Ab Initio (Summer 2023) - Software Engineering Intern</h5>
-                <h5>Vanguard (Autumn 2023 - Spring 2025) - Data Analyst</h5>
-                <h5>The Ohio State University (Spring 2024 : S) - Graduate Teaching Associate</h5>
-              </b>
-            </article>
+        <div className="about__meta">
+          <div className="about__meta-block">
+            <h3>// education</h3>
+            <ul className="about__education">
+              <li>
+                <img
+                  src={ohioStateLogo}
+                  alt=""
+                  className="about__edu-logo"
+                />
+                <div className="about__edu-text">
+                  <strong>MS, Computer Science, AI Specialization</strong>
+                  <span>THE Ohio State University · 2024–2025</span>
+                </div>
+              </li>
+              <li>
+                <img
+                  src={ohioStateLogo}
+                  alt=""
+                  className="about__edu-logo"
+                />
+                <div className="about__edu-text">
+                  <strong>BS, Computer Science</strong>
+                  <span>THE Ohio State University · 2020–2024</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div className="about__meta-block">
+            <h3>// focuses</h3>
+            <ul className="about__focus">
+              <li>Product development</li>
+              <li>User research</li>
+              <li>Experimentation</li>
+              <li>Data analysis</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default About;
+export default About
