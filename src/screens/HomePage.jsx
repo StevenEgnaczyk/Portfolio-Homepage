@@ -1,17 +1,21 @@
 import React from 'react'
+import Nav from '../components/nav/Nav'
 import Header from '../components/header/Header'
-import Projects from '../components/Projects/Projects'
+import About from '../components/about/About'
 import Experience from '../components/experience/Experience'
+import Projects from '../components/Projects/Projects'
 import Footer from '../components/footer/Footer'
 
 const HomePage = () => {
   return (
-    <>
-        <Header/>
-        <Projects/>
-        <Experience/>
-        <Footer/>
-    </>
+    <div className="page-shell">
+      <Nav />
+      <Header />
+      <About />
+      <Experience />
+      <Projects />
+      <Footer />
+    </div>
   )
 }
 

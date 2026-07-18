@@ -1,0 +1,15 @@
+.ships-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none !important;
+  overflow: hidden;
+}
+
+.ships-bg__canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 1;
+  pointer-events: none !important;
+}

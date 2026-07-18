@@ -1,0 +1,134 @@
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1rem 0;
+  transition: background 180ms ease, box-shadow 180ms ease, padding 180ms ease, backdrop-filter 180ms ease;
+}
+
+.site-nav--scrolled {
+  padding: 0.65rem 0;
+  background: rgba(5, 7, 10, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 var(--line);
+}
+
+.site-nav__inner {
+  width: var(--container-wide);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.site-nav__brand {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.88rem;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+
+.site-nav__brand:hover {
+  color: var(--accent);
+  text-shadow: 0 0 12px var(--accent-glow);
+}
+
+.site-nav__brand::before {
+  content: '~/';
+  color: var(--ink-faint);
+  margin-right: 0.15rem;
+}
+
+.site-nav__links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.site-nav__links a {
+  color: var(--ink-muted);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+}
+
+.site-nav__links a:hover {
+  color: var(--accent);
+}
+
+.site-nav__cta {
+  color: var(--accent) !important;
+  font-weight: 600 !important;
+}
+
+.site-nav__cta::before {
+  content: '>';
+  margin-right: 0.35rem;
+  opacity: 0.7;
+}
+
+.site-nav__toggle {
+  display: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  z-index: 110;
+}
+
+.site-nav__toggle span {
+  display: block;
+  width: 1.35rem;
+  height: 1.5px;
+  background: var(--accent);
+  margin: 0.35rem auto;
+  transition: transform 180ms ease, opacity 180ms ease;
+  box-shadow: 0 0 6px rgba(0, 229, 255, 0.4);
+}
+
+.site-nav--open .site-nav__toggle span:first-child {
+  transform: translateY(3.5px) rotate(45deg);
+}
+
+.site-nav--open .site-nav__toggle span:last-child {
+  transform: translateY(-3.5px) rotate(-45deg);
+}
+
+@media screen and (max-width: 768px) {
+  .site-nav__toggle {
+    display: block;
+  }
+
+  .site-nav__links {
+    position: fixed;
+    inset: 0;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    background: rgba(5, 7, 10, 0.97);
+    backdrop-filter: blur(16px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 180ms ease;
+  }
+
+  .site-nav--open .site-nav__links {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .site-nav__links a {
+    font-family: var(--font-mono);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+}

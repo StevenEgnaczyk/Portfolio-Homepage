@@ -1,252 +1,157 @@
-/* General header styles */
-header {
-    height: 100vh;
-    padding-top: 1rem;
-    overflow: hidden;
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 1.25rem 18vh;
+  overflow: hidden;
+  z-index: 1;
 }
 
-.profile__container {
-    display: flex;
-    flex-direction: column;
+.hero__content {
+  position: relative;
+  z-index: 2;
+  width: var(--container);
+  max-width: 46rem;
+  margin: 0 auto;
+  text-align: center;
+  animation: fade-up 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+  padding: 2rem 1.5rem;
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(ellipse 80% 70% at 50% 45%, rgba(5, 7, 10, 0.82) 0%, rgba(5, 7, 10, 0.55) 55%, transparent 75%);
 }
 
-.header__container {
-    text-align: center;
-    width: 50%;
-    height: 100%;
-    position: relative;
+.hero__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+  margin-bottom: 1.35rem;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--line);
+  background: rgba(0, 229, 255, 0.04);
 }
 
-/* Contact buttons styles */
+.hero__status-dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+  animation: pulse-glow 2.2s ease-in-out infinite;
+}
+
+.hero__name {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 9vw, 5.25rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 0.92;
+  color: var(--ink);
+  margin-bottom: 0.85rem;
+  text-shadow: 0 0 48px rgba(0, 229, 255, 0.18);
+}
+
+.hero__title {
+  font-family: var(--font-mono);
+  font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+  font-weight: 500;
+  color: var(--accent-deep);
+  margin-bottom: 1.1rem;
+  letter-spacing: 0.02em;
+}
+
+.hero__lede {
+  font-size: clamp(1.02rem, 2vw, 1.15rem);
+  color: var(--ink-muted);
+  max-width: 34rem;
+  margin: 0 auto 2rem;
+  line-height: 1.65;
+}
+
+.hero__lede-focus {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--accent-deep);
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  letter-spacing: 0.02em;
+}
+
 .contact_buttons {
-    margin-top: 0.5rem;  /* Push buttons down */
-    display: flex;
-    gap: 1.2rem;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 0;
+  margin-bottom: 1.75rem;
 }
 
-/* Professional headshot styles */
-.professional-headshot {
-    width: 22rem;
-    height: 23.5rem;
-    margin-top: 1rem;
-    border-radius: 2rem;
-    border: 0.1rem solid var(--color-primary);
-    overflow: hidden;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
+.hero__social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.15rem 1.75rem;
 }
 
-.professional-headshot img {
-    width: 100%;
-    height: 100%;
+.hero__social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--ink-muted);
+  text-decoration: none;
+  transition: color 180ms ease, text-shadow 180ms ease;
 }
 
-/* Floating icons container */
-.icon-bubble-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
+.hero__social a svg {
+  font-size: 1.2rem;
+  color: var(--accent);
+  filter: drop-shadow(0 0 6px rgba(0, 229, 255, 0.35));
 }
 
-/* Social icons container */
-.social-icons-container {
-    display: flex;
-    flex-wrap: wrap;  /* Ensure the icons wrap if necessary */
-    gap: 1rem;  /* Space between icons */
-    justify-content: center;  /* Center icons horizontally */
+.hero__social a:hover {
+  color: var(--accent);
+  text-shadow: 0 0 12px rgba(0, 229, 255, 0.25);
 }
 
-/* Container for each icon and label */
-.social-icon-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;  /* Center align icons and labels */
-}
-
-.social-icon {
-    color: var(--color-primary);  /* Adjust color as needed */
-    opacity: 1;
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    font-size: 60px;
-    pointer-events: auto;
-    animation: bubble 5s infinite ease-in-out;
-    transition: font-size 1s ease, animation-play-state 1s ease;
-    text-decoration: none;  /* Remove underline from links */
-}
-
-/* Hover effect for icons */
-.social-icon:hover {
-    font-size: 70px;
-    text-align: center;
-    animation-play-state: paused !important;  /* Stop the movement */
-}
-
-/* Social icon labels */
-.social-icon-label {
-    margin-top: 0.5rem;  /* Space between icon and label */
-    font-size: 20px;  /* Font size for labels */
-    color: #fff;  /* Adjust color as needed */
-    text-align: center;  /* Center text under icons */
-    line-height: 1.2;  /* Adjust line height for readability */
-}
-
-/* Random positions for the floating icons */
-.social-icon-0 { top:5%; left: 10%; animation-delay: 0s; }
-.social-icon-1 { top: 30%; left: 10%; animation-delay: 0s; }
-.social-icon-2 { top: 5%; left: 80%; animation-delay: 0s; }
-.social-icon-3 { top: 30%; left: 80%; animation-delay: 0s; }
-
-/* Animation for the floating effect */
-@keyframes bubble {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-/* Styles for the dropdown */
-.social-dropdown {
-    margin-top: 1rem;
-    display: none; /* Hidden by default */
-    position: relative;
-}
-
-.contact-dropdown {
-    display: none;
-    position: relative;
-}
-
-.dropdown-menu {
-    display: block;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-10px);
-    background-color: var(--color-bg);
-    border: 2px solid var(--color-tertiary);
-    list-style: none;
-    z-index: 100;
-    min-width: 200px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-    border-radius: 1rem;
-    padding: 0.5rem 0;
-    opacity: 0;
-    pointer-events: none;
-    text-align: center;
-    transition: opacity 0.25s cubic-bezier(0.4,0,0.2,1), transform 0.25s cubic-bezier(0.4,0,0.2,1);
-}
-.dropdown-menu.open {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateX(-50%) translateY(0);
-}
-.dropdown-menu li {
-    padding: 0.5rem 1rem;
-    border: none;
-    text-align: center;
-}
-.dropdown-menu li:hover {
-    background-color: var(--color-tertiary);
-}
-.dropdown-menu li:hover a {
-    color: var(--color-white);
-}
-.dropdown-menu li a {
-    text-decoration: none;
-    color: var(--color-tertiary);
-    font-size: 1.1rem;
-    display: inline-block;
-    width: 100%;
-}
-
-/* Show dropdown menu on hover */
-.social-dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-.socials-btn {
-    border: 3px solid var(--color-primary);
-    color: var(--color-white);
-    background-color: var(--color-black);
-}
-
-.socials-btn:hover {
-    border: 3px solid var(--color-primary);
-    color: var(--color-white);
-    background-color: var(--color-gray);
-}
-
-/* Media queries for medium devices (Tablets) */
-@media screen and (max-width: 1200px) {
-    /* Hide the floating icons on small screens */
-    .social-icons-container {
-        display: none;
-    }
-
-    /* Show the dropdown on small screens */
-    .contact-dropdown {
-        display: block;
-    }
-
-    /* Adjust the size of the header text */
-    .header__container {
-        width: 80%;
-    }
-}
-
-/* Media queries for small devices (Mobiles) */
 @media screen and (max-width: 600px) {
+  .hero {
+    padding: 5.5rem 1rem 3.5rem;
+  }
 
-    header {
-        height: 50vh;
-    }
+  .hero__content {
+    width: 100%;
+    max-width: none;
+  }
 
-    /* Adjust the size of the header text */
-    .header__container {
-        width: 100%;
-    }
+  .hero__name {
+    font-size: clamp(2.4rem, 12vw, 3.25rem);
+  }
 
-    /* Adjust the size of the professional headshot */
-    .professional-headshot {
-        width: 70vw;
-        height: 30vh;
-    }
+  .hero__lede {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
 
-    .professional-headshot img {
-        object-fit: cover; /* Keeps aspect ratio */
-        object-position: top; /* Keeps the top part of the image in view */
-    }
+  .hero__social span {
+    display: none;
+  }
 
-    .icon-bubble-container {
-        height: auto;
-    }
+  .hero__social {
+    gap: 1.35rem;
+  }
 
-    .header__container h1 {
-        font-size: 2.5rem;
-    }
-
-    .header__container h2 {
-        font-size: 1rem;
-    }
-
-    .contact_buttons {
-        gap: 0.3rem;
-    }
-
-    .contact_buttons .btn {
-        font-size: medium;
-        padding: 0.3rem 0.3rem;
-    }
-
-    .btn {
-        font-size: medium;
-        padding: 0.5rem 0.5rem;
-    }
+  .hero__social a svg {
+    font-size: 1.4rem;
+  }
 }
